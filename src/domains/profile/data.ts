@@ -67,7 +67,7 @@ export const TIMELINE: TimelineItem[] = [
     period: "2019.08 — 2024.02",
     role: "Line Lead (Secondary Production Manager)",
     company: "글로벌 FMCG 기업",
-    description: "신공정 라인(Terea) 24시간 연속 운전 총괄. 40명 이상 다기능 조직 매니징. KPI 기반 생산성 관리 및 조직 문화 지표(NPS) 대폭 개선 (-45% → +35%).",
+    description: "신제품 라인 24시간 연속 운전 총괄. 40명 이상 다기능 조직 매니징. KPI 기반 생산성 관리 및 조직 문화 지표(NPS) 대폭 개선 (-45% → +35%).",
   },
   {
     period: "2017.07 — 2019.08",

@@ -28,7 +28,7 @@ export function generateAgentResponse(query: string, history: ChatMessage[]): st
   if (q.includes("lean") || q.includes("린") || q.includes("iws") || q.includes("낭비") || q.includes("개선") || q.includes("oee") || q.includes("mtbf")) {
     return `📊 **Lean Operations & IWS (Integrated Work System):**
 - **글로벌 STA 경력**: 이탈리아 볼로냐 공장으로 파견되어 글로벌 EY 컨설턴트들로부터 IWS 방법론을 직접 전수받고 공정 변화 관리 트레이너 자격을 공인받았습니다.
-- **지표 달성**: 기존 설비 및 신규 설비 라인(Heets/Terea)에 Lean 기법을 전파하여 **OEE 115% 향상, MTBF 208% 증가, Unplanned Downtime 61% 감소, 폐기율(Waste) 82% 절감**의 압도적인 생산성 성과를 이끌어 냈습니다.
+- **지표 달성**: 기존 설비 및 신규 설비 라인(신제품)에 Lean 기법을 전파하여 **OEE 115% 향상, MTBF 208% 증가, Unplanned Downtime 61% 감소, 폐기율(Waste) 82% 절감**의 압도적인 생산성 성과를 이끌어 냈습니다.
 - **개발 철학과의 융합**: Harry의 코딩 철학은 '낭비가 없는 것'입니다. 불필요하게 거대하고 느린 아키텍처를 지양하고, 본질적인 비즈니스 가치와 최상의 UI 편의성에 초점을 맞추는 **Domain-First, AI-Always** 설계의 원천입니다.`;
   }
 
