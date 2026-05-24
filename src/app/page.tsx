@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import { PROJECTS, INTERESTS, TIMELINE } from "@/domains/profile/data";
 import AICopilot from "@/components/AICopilot";
-import ContactForm from "@/components/ContactForm";
+import CoffeeChatForm from "@/components/CoffeeChat/CoffeeChatForm";
 
 export default function Page() {
   return (
@@ -132,10 +132,10 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Coffee Chat Section */}
       <section id="contact" className={styles.section}>
         <div className="container">
-          <ContactForm />
+          <CoffeeChatForm />
         </div>
       </section>
 
