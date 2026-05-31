@@ -176,6 +176,17 @@ export const PROJECTS: Project[] = [
       en: "AI-powered personalized analysis with response consistency validation",
     },
   },
+  {
+    title: "notes.rolean.org",
+    url: "https://notes.rolean.org",
+    description: {
+      ko: "3패널 레이아웃의 AI 지식 관리 시스템. 문서 트리, 마크다운 에디터, AI 어시스턴트, 오디오 전사 및 이미지 분석 기능.",
+      en: "AI knowledge base with three-panel layout: document tree, markdown editor, AI assistant, audio transcription, and image analysis.",
+    },
+    tags: ["Next.js 16", "Prisma", "Z.ai SDK", "AI"],
+    emoji: "🧠",
+    status: "live",
+  },
 ];
 
 // ========================================================================
