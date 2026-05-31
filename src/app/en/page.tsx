@@ -4,9 +4,9 @@ import PortfolioContent from "@/components/PortfolioContent";
 export const metadata: Metadata = {
   title: "Hyunwoo Lee (Harry) — Domain-First Engineer | Smart Factory, Lean/IWS, AI & Software",
   description:
-    "15년간 제조 현장에서 축적한 도메인 전문성과 소프트웨어 엔지니어링의 융합. Smart Factory, Lean/IWS, OT Security, AI. OEE 115%, MTBF 208%, 폐기율 82% 절감.",
+    "Portfolio of Hyunwoo Lee (Harry) — 15+ years of manufacturing domain expertise (Smart Factory, Lean/IWS, OT Security) meets full-stack software engineering and AI. OEE 115%, MTBF 208%, Waste -82%.",
   alternates: {
-    canonical: "https://rolean.org",
+    canonical: "https://rolean.org/en",
     languages: {
       ko: "https://rolean.org",
       en: "https://rolean.org/en",
@@ -14,6 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function KoreanPage() {
-  return <PortfolioContent locale="ko" />;
+export default function EnglishPage() {
+  return <PortfolioContent locale="en" />;
 }

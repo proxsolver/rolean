@@ -17,11 +17,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL("https://rolean.org"),
   title: {
-    default: "Hyunwoo Lee (Harry) — Domain-First Engineer | Smart Factory, Lean/IWS, AI & Software",
+    default: "Hyunwoo Lee (Harry) — Domain-First Engineer | rolean.org",
     template: "%s | rolean.org",
   },
   description:
-    "Portfolio of Hyunwoo Lee (Harry), a domain-first engineer with 15+ years in manufacturing (Smart Factory, Lean/IWS, OT Security) combined with full-stack software engineering and AI. OEE 115%, MTBF 208%, Waste -82%. Building the bridge between IT and OT.",
+    "Portfolio of Hyunwoo Lee (Harry) — domain-first engineer combining 15 years of manufacturing expertise with software engineering, AI, and Smart Factory innovation.",
   keywords: [
     "Hyunwoo Lee",
     "Harry Lee",
@@ -32,21 +32,12 @@ export const metadata: Metadata = {
     "OT Security",
     "IoT",
     "ESP32",
-    "Manufacturing Engineer",
     "Software Engineer",
-    "Full-Stack Developer",
     "AI",
     "PTC Kepware",
     "OEE Optimization",
     "Vibe Coding",
     "rolean",
-    "Domain First",
-    "AI Always",
-    "FMCG",
-    "Process Optimization",
-    "Power BI",
-    "Next.js",
-    "TypeScript",
   ],
   authors: [{ name: "Hyunwoo Lee (Harry)", url: "https://rolean.org" }],
   creator: "Hyunwoo Lee (Harry)",
@@ -65,31 +56,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
+    alternateLocale: "en_US",
     url: "https://rolean.org",
     siteName: "rolean.org",
     title: "Hyunwoo Lee (Harry) — Domain-First Engineer",
     description:
-      "15+ years in manufacturing meets software engineering. Smart Factory, Lean/IWS, OT Security, AI. Building the bridge between IT and OT.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "rolean.org — Hyunwoo Lee (Harry) Portfolio",
-      },
-    ],
+      "15+ years in manufacturing meets software engineering. Smart Factory, Lean/IWS, OT Security, AI.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Hyunwoo Lee (Harry) — Domain-First Engineer",
     description:
       "15+ years in manufacturing meets software engineering. Smart Factory, Lean/IWS, OT Security, AI.",
-    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://rolean.org",
+    languages: {
+      ko: "https://rolean.org",
+      en: "https://rolean.org/en",
+    },
   },
-  category: "technology",
 };
 
 export default function RootLayout({
@@ -99,9 +85,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${inter.variable} ${outfit.variable}`}>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
