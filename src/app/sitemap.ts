@@ -52,11 +52,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
-    {
-      url: "https://notes.rolean.org",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
   ];
 }
