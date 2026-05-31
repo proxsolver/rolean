@@ -6,32 +6,24 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 5
 
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.2.2
-        with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          port: ${{ secrets.DEPLOY_PORT || 22 }}
-          username: ${{ secrets.DEPLOY_USER }}
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
-          script: |
-            echo "🚀 Deploying rolean.org..."
-            cd ${{ secrets.DEPLOY_PATH }}
+      - name: Deploy rolean.org
+        working-directory: /home/harry/2026/rolean
+        run: |
+          echo "Pulling latest code..."
+          git pull origin main
 
-            echo "📥 Pulling latest code..."
-            git pull origin main
+          echo "Installing dependencies..."
+          npm install --production=false
 
-            echo "📦 Installing dependencies..."
-            npm install --production=false
+          echo "Building production..."
+          npm run build
 
-            echo "🔨 Building production..."
-            npm run build
+          echo "Restarting PM2..."
+          pm2 restart rolean || pm2 start npm --name "rolean" -- start -- -p 3090
 
-            echo "🔄 Restarting PM2..."
-            pm2 restart rolean || pm2 start npm --name "rolean" -- start
-
-            echo "✅ Deploy complete!"
-            pm2 status rolean
+          echo "Deploy complete!"
+          pm2 status rolean
