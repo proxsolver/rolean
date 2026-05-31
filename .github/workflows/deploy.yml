@@ -16,8 +16,11 @@ jobs:
           echo "Pulling latest code..."
           git pull origin main
 
+          echo "Cleaning stale build locks..."
+          rm -rf .next
+
           echo "Installing dependencies..."
-          npm install --production=false
+          npm install --omit=dev=false
 
           echo "Building production..."
           npm run build
