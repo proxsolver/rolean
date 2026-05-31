@@ -177,17 +177,6 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    title: "news.rolean.org",
-    url: "https://news.rolean.org",
-    description: {
-      ko: "AI 기반 지능형 게시판. 7가지 페르소나 AI 댓글 생성, 다계층 웹 검색 통합, RAG 컨텍스트 인식 응답 및 지식 그래프를 제공합니다.",
-      en: "AI-powered forum with 7 persona-driven comment generation, multi-tier web search, RAG context-aware responses, and knowledge graph.",
-    },
-    tags: ["Node.js", "RAG", "AI Personas", "MySQL"],
-    emoji: "📋",
-    status: "live",
-  },
-  {
     title: "notes.rolean.org",
     url: "https://notes.rolean.org",
     description: {
@@ -196,17 +185,6 @@ export const PROJECTS: Project[] = [
     },
     tags: ["Next.js 16", "Prisma", "Z.ai SDK", "AI"],
     emoji: "🧠",
-    status: "live",
-  },
-  {
-    title: "mon.rolean.org",
-    url: "https://mon.rolean.org",
-    description: {
-      ko: "포켓몬 디지털 카드 도감. 글래스모피즘 UI, 3D 틸트 효과, 실시간 한영 번역, 무한 스크롤, 컬렉션 관리 및 퀴즈 게임.",
-      en: "Pokémon digital card collection with glassmorphism UI, 3D tilt, real-time Korean/English translation, infinite scroll, and quiz game.",
-    },
-    tags: ["Vanilla JS", "PHP", "MySQL", "3D CSS"],
-    emoji: "⚡",
     status: "live",
   },
 ];
