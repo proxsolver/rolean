@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import type { Locale } from "@/domains/profile/i18n";
+import { trackLanguageSwitch } from "@/components/GoogleAnalytics";
 
 export default function LanguageToggle({ locale }: { locale: Locale }) {
   const pathname = usePathname();
@@ -11,6 +12,7 @@ export default function LanguageToggle({ locale }: { locale: Locale }) {
   return (
     <a
       href={target}
+      onClick={() => trackLanguageSwitch(locale, isEn ? "ko" : "en")}
       style={{
         display: "inline-flex",
         alignItems: "center",

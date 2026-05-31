@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { trackChatEvent } from "@/components/GoogleAnalytics";
 
 interface Message {
   role: "user" | "assistant";
@@ -34,8 +35,10 @@ export default function AICopilot() {
     scrollToBottom();
   }, [messages, isLoading]);
 
-  const handleSendMessage = async (text: string) => {
+  const handleSendMessage = async (text: string, isSuggestion = false) => {
     if (!text.trim()) return;
+
+    trackChatEvent(isSuggestion ? "suggestion_click" : "message_sent", text.substring(0, 50));
 
     const userMessage: Message = { role: "user", content: text };
     setMessages((prev) => [...prev, userMessage]);
@@ -94,7 +97,10 @@ export default function AICopilot() {
     <>
       {/* Floating Toggle Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+          if (!isOpen) trackChatEvent("open");
+          setIsOpen(!isOpen);
+        }}
         style={{
           position: "fixed",
           bottom: "24px",
@@ -306,7 +312,7 @@ export default function AICopilot() {
               <button
                 key={idx}
                 className="suggestion-chip"
-                onClick={() => handleSendMessage(item.query)}
+                onClick={() => handleSendMessage(item.query, true)}
               >
                 {item.label}
               </button>
