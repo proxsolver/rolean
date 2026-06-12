@@ -187,6 +187,21 @@ export const PROJECTS: Project[] = [
     emoji: "🧠",
     status: "live",
   },
+  {
+    title: "secret.rolean.org",
+    url: "https://secret.rolean.org",
+    description: {
+      ko: "불국사의 비밀 — 1,300년 전 석공들이 숨겨놓은 암호. 초등학생을 위한 교육 미스터리 소설. 다빈치 코드 스타일의 암호 해독과 실제 과학 기반 스토리텔링.",
+      en: "The Secret of Bulguksa — Ciphers hidden by stonemasons 1,300 years ago. Educational mystery novel for kids. Da Vinci Code-style cipher decoding with real science-based storytelling.",
+    },
+    tags: ["HTML/CSS", "Creative Writing", "Science Education"],
+    emoji: "🏛️",
+    status: "live",
+    impact: {
+      ko: "수학(황금비, 등차수열), 물리(마찰력, 내진), 화학(산화환원), 생물(광합성)을 미스터리 소설로 체험형 학습",
+      en: "Experiential learning of math (golden ratio, sequences), physics (friction, seismic), chemistry (redox), biology (photosynthesis) through mystery storytelling",
+    },
+  },
 ];
 
 // ========================================================================
