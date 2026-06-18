@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PortfolioContent from "@/components/PortfolioContent";
 
 export const metadata: Metadata = {
-  title: "Hyunwoo Lee (Harry) — Domain-First Engineer | Smart Factory, Lean/IWS, AI & Software",
+  title: "Hyunwoo Lee (Harry) — Making Factory Data Readable | Power BI · Lean/IWS",
   description:
-    "Portfolio of Hyunwoo Lee (Harry) — 15+ years of manufacturing domain expertise (Smart Factory, Lean/IWS, OT Security) meets full-stack software engineering and AI. OEE 115%, MTBF 208%, Waste -82%.",
+    "15 years in manufacturing. Lean/IWS meets Power BI — factory-data visualizations everyone, from operators to executives, can act on. OEE stratified analysis adopted as a global best practice. OEE +115%, MTBF +208%, Waste -82%.",
   alternates: {
     canonical: "https://rolean.org/en",
     languages: {
