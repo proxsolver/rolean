@@ -15,11 +15,17 @@ export const UI: Record<string, Record<Locale, string>> = {
 
   // Hero
   "hero.kicker": { ko: "Domain First · AI Always", en: "Domain First · AI Always" },
-  "hero.title.line1": { ko: "Vibe Coder Meets", en: "Vibe Coder Meets" },
-  "hero.title.line2": { ko: "Lean Operation.", en: "Lean Operation." },
+  "hero.title.line1": {
+    ko: "공장 데이터를 전 직원이",
+    en: "Making Factory Data",
+  },
+  "hero.title.line2": {
+    ko: "읽게 만드는 사람.",
+    en: "Readable for Everyone.",
+  },
   "hero.desc": {
-    ko: "15년간 현장에서 축적한 제조 도메인 전문성을 바탕으로 IT와 OT의 다리를 놓습니다. 공정 최적화의 Lean 사고법과 실시간 데이터 파이프라인 설계를 바탕으로, 가장 견고하고 낭비 없는 고성능 소프트웨어를 구현합니다.",
-    en: "Bridging IT and OT with 15 years of hands-on manufacturing domain expertise. Applying Lean thinking from process optimization to real-time data pipeline design — building robust, waste-free, high-performance software.",
+    ko: "Lean/IWS 방법론과 Power BI를 결합해, 공장 데이터를 경영진부터 현장직원까지 모두가 쓸 수 있는 시각화로 압축합니다. 글로벌 FMCG(Fortune 500)에서 구축한 OEE 층별분석 및 코칭 대시보드가 전 세계 베스트 프랙티스로 채택되었습니다.",
+    en: "Bridging Lean/IWS methodology with Power BI to compress complex factory data into visualizations that everyone—from operators to executives—can act on. My OEE stratified analysis and coaching dashboards, built at a global FMCG (Fortune 500), were adopted as worldwide best practices.",
   },
   "hero.cta.projects": { ko: "View Projects", en: "View Projects" },
   "hero.cta.career": { ko: "Read Career", en: "Read Career" },
@@ -40,6 +46,10 @@ export const UI: Record<string, Record<Locale, string>> = {
   "philosophy.p2": {
     ko: "소프트웨어 엔지니어링 역시 같습니다. 무거운 프레임워크나 불필요하게 복잡한 아키텍처에 집착하지 않고, 비즈니스 가치와 사용자 인터페이스의 극단적 편의성을 지향하여 가장 빠르고 신뢰성 높은 최적의 코드를 작성합니다.",
     en: "Software engineering follows the same principle. No obsession with heavy frameworks or unnecessarily complex architectures — focusing on business value and extreme UI usability to write the fastest, most reliable, optimal code.",
+  },
+  "philosophy.p3": {
+    ko: "데이터 시각화도 같습니다. 화려한 차트가 아니라, 현장이 내일 당장 행동으로 옮길 수 있는 단순함.",
+    en: "Data visualization follows the same principle. Not flashy charts, but the simplicity the frontline can turn into action tomorrow.",
   },
 
   // Interests / Expertise

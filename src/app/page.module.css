@@ -463,6 +463,12 @@
   border: 1px solid rgba(144, 202, 249, 0.2);
 }
 
+.status-award {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.22), rgba(212, 175, 55, 0.08));
+  color: var(--color-gold);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
 .status-live {
   background: rgba(76, 175, 80, 0.12);
   color: #81c784;

@@ -164,6 +164,9 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
                 {t("philosophy.p2", locale)}{" "}
                 <strong>&quot;{PERSON.tagline}&quot;</strong>
               </p>
+              <p className={styles.bodyPara}>
+                {t("philosophy.p3", locale)}
+              </p>
             </div>
           </div>
         </div>
@@ -193,7 +196,7 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
                 </h3>
                 <p className={styles.interestDesc}>{item.desc[locale]}</p>
                 <div className={styles.keywordTags}>
-                  {item.keywords.slice(0, 3).map((kw, kwIdx) => (
+                  {item.keywords.map((kw, kwIdx) => (
                     <span key={kwIdx} className={styles.keywordTag}>
                       {kw}
                     </span>

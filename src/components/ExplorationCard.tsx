@@ -17,17 +17,19 @@ export default function ExplorationCard({
       <div className={styles.explorationHeader}>
         <span className={styles.explorationEmoji}>{item.emoji}</span>
         <span
-          className={`${styles.statusBadge} ${styles[`status-${item.status}`]}`}
+          className={`${styles.statusBadge} ${styles[`status-${item.statusVariant ?? item.status}`]}`}
         >
-          {item.status === "active"
-            ? "Active"
-            : item.status === "completed"
-              ? "Completed"
-              : "Prototype"}
+          {item.statusLabel
+            ? item.statusLabel[locale]
+            : item.status === "active"
+              ? "Active"
+              : item.status === "completed"
+                ? "Completed"
+                : "Prototype"}
         </span>
       </div>
-      <h3 className={styles.explorationTitle}>{item.title}</h3>
-      <p className={styles.explorationDomain}>{item.domain}</p>
+      <h3 className={styles.explorationTitle}>{item.title[locale]}</h3>
+      <p className={styles.explorationDomain}>{item.domain[locale]}</p>
       <p className={styles.explorationDesc}>{item.description[locale]}</p>
       <div className={styles.techStack}>
         {item.techStack.map((tech, techIdx) => (
@@ -38,7 +40,7 @@ export default function ExplorationCard({
       </div>
       <div className={styles.insightBox}>
         <p className={styles.insightLabel}>
-          {t("explorations.insight", locale)}
+          {item.insightLabel?.[locale] ?? t("explorations.insight", locale)}
         </p>
         <p className={styles.insightText}>
           {item.learnedInsight[locale]}

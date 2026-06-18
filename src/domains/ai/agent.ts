@@ -171,7 +171,7 @@ Harry understands the triad: **Availability** (production can't stop) → **Safe
     q.includes("실험") || q.includes("experiment") || q.includes("배우") || q.includes("연구")
   ) {
     const explorations = EXPLORATIONS.map(e =>
-      `${e.emoji} **${e.title}** [${e.status.toUpperCase()}] — ${e.domain}\n  ${e.description.en}\n  Stack: ${e.techStack.join(", ")}\n  💡 ${e.learnedInsight.en}`
+      `${e.emoji} **${e.title.en}** [${e.status.toUpperCase()}] — ${e.domain.en}\n  ${e.description.en}\n  Stack: ${e.techStack.join(", ")}\n  💡 ${e.learnedInsight.en}`
     ).join("\n\n");
     return `🔬 **${PERSON.knownAs}'s 2026 Exploration Journey:**\n\nEvery learning experiment becomes a working prototype or production system.\n\n${explorations}\n\n🔗 Each demonstrates: **domain knowledge + software engineering = unique value creation**.`;
   }

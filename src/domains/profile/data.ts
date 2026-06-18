@@ -16,12 +16,19 @@ export interface Project {
 }
 
 export interface Exploration {
-  title: string;
+  title: Record<Locale, string>;
   emoji: string;
-  domain: string;
+  domain: Record<Locale, string>;
   description: Record<Locale, string>;
   techStack: string[];
   status: "active" | "completed" | "prototype";
+  // Optional override: custom badge text (e.g. "🏆 GLOBAL BEST PRACTICE")
+  // and its color variant. Falls back to the status enum when omitted.
+  statusLabel?: Record<Locale, string>;
+  statusVariant?: "active" | "completed" | "prototype" | "award";
+  // Optional override for the insight-box label (e.g. "🏆 핵심 성과" for
+  // outcome-focused cards). Falls back to "💡 배운 점 / 💡 Learned".
+  insightLabel?: Record<Locale, string>;
   learnedInsight: Record<Locale, string>;
 }
 
@@ -61,8 +68,8 @@ export const PERSON = {
   orgType: "Global Fortune 500 FMCG Manufacturer",
   location: "South Korea",
   experience: {
-    ko: "제조 도메인 15년+ 경력의 소프트웨어 엔지니어",
-    en: "Software Engineer with 15+ years in manufacturing domain",
+    ko: "15년 제조 도메인 경력",
+    en: "15 years in manufacturing",
   },
   domains: [
     "Smart Factory & Industrial IoT",
@@ -209,9 +216,63 @@ export const PROJECTS: Project[] = [
 // ========================================================================
 export const EXPLORATIONS: Exploration[] = [
   {
-    title: "Agile O365 Learning Platform",
+    title: { ko: "OEE 층별분석 대시보드", en: "OEE Stratified Analysis Dashboard" },
+    emoji: "🏭",
+    domain: { ko: "제조 데이터 시각화", en: "Manufacturing Data Visualization" },
+    description: {
+      ko: "브랜드(SKU)별, 근무조별 OEE 값과 손실 경향성을 실시간으로 파악할 수 있는 Power BI 대시보드. 기존에는 글로벌 데이터를 단순 집계하여 top management용으로만 사용되던 것을, 공장장부터 현장 직원까지 모든 계층이 일일 의사결정에 활용하도록 재설계.",
+      en: "A Power BI dashboard that surfaces OEE values and loss trends by brand (SKU) and shift in real time. What used to be simple global rollups for top management only was redesigned so every layer — from plant managers to frontline operators — uses it for daily decision-making.",
+    },
+    techStack: ["Power BI", "OEE", "손실분석", "글로벌 확산"],
+    status: "active",
+    statusLabel: { ko: "🏆 GLOBAL BEST PRACTICE", en: "🏆 GLOBAL BEST PRACTICE" },
+    statusVariant: "award",
+    insightLabel: { ko: "🏆 핵심 성과", en: "🏆 Key Achievement" },
+    learnedInsight: {
+      ko: "글로벌 베스트 프랙티스로 채택 — 전 세계 지사의 극찬을 받았습니다.",
+      en: "Adopted as a global best practice — praised by subsidiaries worldwide.",
+    },
+  },
+  {
+    title: { ko: "Coaching on the Floor 대시보드", en: "Coaching on the Floor Dashboard" },
+    emoji: "📋",
+    domain: { ko: "현장 운영", en: "Frontline Operations" },
+    description: {
+      ko: "현장 인원의 OPEN+ 활동 이력과 역량 수준을 단일 페이지에서 통합 조회하는 코칭 전용 대시보드. 현장 리더가 데이터를 넘겨보며 즉시 코칭 포인트를 식별할 수 있도록, 꼭 필요한 정보만 심플하게 배치.",
+      en: "A coaching dashboard that consolidates OPEN+ activity history and capability levels onto a single page. Curated with only the essentials, so frontline leaders can scan the data and instantly spot coaching points.",
+    },
+    techStack: ["Power BI", "역량관리", "현장코칭", "OPEN+"],
+    status: "active",
+    statusLabel: { ko: "🌍 GLOBAL RECOGNITION", en: "🌍 GLOBAL RECOGNITION" },
+    statusVariant: "award",
+    insightLabel: { ko: "🏆 핵심 성과", en: "🏆 Key Achievement" },
+    learnedInsight: {
+      ko: "타 국가 시연 시 “우리가 필요했던 것”이라는 반응.",
+      en: "When demoed in other countries: “this is exactly what we needed.”",
+    },
+  },
+  {
+    title: { ko: "사내 Power BI & 데이터 리터러시 교육", en: "In-house Power BI & Data Literacy Training" },
+    emoji: "📣",
+    domain: { ko: "데이터 역량화", en: "Data Empowerment" },
+    description: {
+      ko: "도구 사용법이 아닌 ‘데이터를 읽는 사고법’을 전수하는 입문 교육. 현장 엔지니어들이 스스로 데이터를 읽고, 질문을 던지고, 개선 액션을 도출할 수 있도록 역량화. Power BI는 도구일 뿐 — 중요한 건 데이터를 의사결정으로 연결하는 사고법.",
+      en: "An introductory course teaching not tool mechanics but the thinking to read data. Equips frontline engineers to read data themselves, ask the right questions, and derive improvement actions. Power BI is just a tool — what matters is the thinking that turns data into decisions.",
+    },
+    techStack: ["Power BI", "Data Literacy", "교육설계", "역량화"],
+    status: "active",
+    statusLabel: { ko: "● ONGOING", en: "● ONGOING" },
+    statusVariant: "active",
+    insightLabel: { ko: "🏆 핵심 성과", en: "🏆 Key Achievement" },
+    learnedInsight: {
+      ko: "현장 엔지니어의 자율적 데이터 기반 의사결정 체계 확립.",
+      en: "Established a self-driven, data-based decision-making culture among frontline engineers.",
+    },
+  },
+  {
+    title: { ko: "Agile O365 Learning Platform", en: "Agile O365 Learning Platform" },
     emoji: "🔄",
-    domain: "Education Technology",
+    domain: { ko: "Education Technology", en: "Education Technology" },
     description: {
       ko: "Microsoft Office 365 기반 AI 대화형 애자일 학습 플랫폼. 10주 프로그레시브 학습 프로그램과 멀티 에이전트 코칭 시스템(MindsetCoach, CeremonyGuide, ToolPractice)을 구축.",
       en: "AI-powered conversational Agile learning platform on Microsoft Office 365. 10-week progressive program with multi-agent coaching system (MindsetCoach, CeremonyGuide, ToolPractice).",
@@ -224,9 +285,9 @@ export const EXPLORATIONS: Exploration[] = [
     },
   },
   {
-    title: "Vexa Meeting Bot Platform",
+    title: { ko: "Vexa Meeting Bot Platform", en: "Vexa Meeting Bot Platform" },
     emoji: "🤖",
-    domain: "Meeting Intelligence",
+    domain: { ko: "Meeting Intelligence", en: "Meeting Intelligence" },
     description: {
       ko: "자가 호스팅 가능한 미팅 봇 API 및 전사 서비스. Google Meet, Teams, Zoom 실시간 전사, 화자 식별, 인터랙티브 봇 제어, MCP 서버(17개 툴) 제공.",
       en: "Self-hostable meeting bot API and transcription service. Real-time transcription, speaker ID, interactive bot controls, MCP server with 17 tools across Meet, Teams, Zoom.",
@@ -239,9 +300,9 @@ export const EXPLORATIONS: Exploration[] = [
     },
   },
   {
-    title: "EBS English Learning Recorder",
+    title: { ko: "EBS English Learning Recorder", en: "EBS English Learning Recorder" },
     emoji: "📻",
-    domain: "Automation & Education",
+    domain: { ko: "Automation & Education", en: "Automation & Education" },
     description: {
       ko: "EBS FM 라디오 영어 학습 프로그램 자동 녹음 시스템. 5개 프로그램(05:59-09:40 KST)을 자동 녹음하고 Telegram으로 업로드.",
       en: "Automated EBS FM English learning radio recorder. Records 5 daily programs (05:59-09:40 KST) and uploads to Telegram automatically.",
@@ -298,6 +359,16 @@ export const INTERESTS: Interest[] = [
       en: "ICS/OT intrusion detection and multi-layered cybersecurity. Secure data communication within air-gapped OT environments.",
     },
     keywords: ["OT Security", "ICS", "SCADA", "Air-Gap"],
+  },
+  {
+    icon: "📊",
+    title: "데이터 시각화 / Power BI",
+    titleEn: "Data Visualization / Power BI",
+    desc: {
+      ko: "공장 현장의 복잡한 데이터를 단순하게. 브랜드(SKU)별, 근무조별 OEE와 손실 경향성을 한눈에 파악할 수 있는 층별분석 대시보드를 설계합니다. top management용 집계가 아닌, 현장이 내일 당장 쓸 수 있는 시각화.",
+      en: "Making complex factory-floor data simple. Designs stratified-analysis dashboards that surface OEE and loss trends by brand (SKU) and shift at a glance — not top-management rollups, but visualizations the frontline can act on tomorrow.",
+    },
+    keywords: ["Power BI", "OEE 층별분석", "Lean Data Design", "Data Democratization"],
   },
 ];
 
