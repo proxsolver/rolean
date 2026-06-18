@@ -22,14 +22,20 @@ export interface Exploration {
   description: Record<Locale, string>;
   techStack: string[];
   status: "active" | "completed" | "prototype";
-  // Optional override: custom badge text (e.g. "🏆 GLOBAL BEST PRACTICE")
-  // and its color variant. Falls back to the status enum when omitted.
-  statusLabel?: Record<Locale, string>;
-  statusVariant?: "active" | "completed" | "prototype" | "award";
-  // Optional override for the insight-box label (e.g. "🏆 핵심 성과" for
-  // outcome-focused cards). Falls back to "💡 배운 점 / 💡 Learned".
-  insightLabel?: Record<Locale, string>;
   learnedInsight: Record<Locale, string>;
+}
+
+export interface SignatureWork {
+  title: Record<Locale, string>;
+  emoji: string;
+  domain: Record<Locale, string>;
+  // Hero credential banner at the top of the card (e.g. "🏆 GLOBAL BEST PRACTICE").
+  credential: Record<Locale, string>;
+  credentialVariant: "award" | "active";
+  description: Record<Locale, string>;
+  // Prominent achievement line — the headline outcome of the work.
+  outcome: Record<Locale, string>;
+  tags: string[];
 }
 
 export interface Interest {
@@ -216,60 +222,6 @@ export const PROJECTS: Project[] = [
 // ========================================================================
 export const EXPLORATIONS: Exploration[] = [
   {
-    title: { ko: "OEE 층별분석 대시보드", en: "OEE Stratified Analysis Dashboard" },
-    emoji: "🏭",
-    domain: { ko: "제조 데이터 시각화", en: "Manufacturing Data Visualization" },
-    description: {
-      ko: "브랜드(SKU)별, 근무조별 OEE 값과 손실 경향성을 실시간으로 파악할 수 있는 Power BI 대시보드. 기존에는 글로벌 데이터를 단순 집계하여 top management용으로만 사용되던 것을, 공장장부터 현장 직원까지 모든 계층이 일일 의사결정에 활용하도록 재설계.",
-      en: "A Power BI dashboard that surfaces OEE values and loss trends by brand (SKU) and shift in real time. What used to be simple global rollups for top management only was redesigned so every layer — from plant managers to frontline operators — uses it for daily decision-making.",
-    },
-    techStack: ["Power BI", "OEE", "손실분석", "글로벌 확산"],
-    status: "active",
-    statusLabel: { ko: "🏆 GLOBAL BEST PRACTICE", en: "🏆 GLOBAL BEST PRACTICE" },
-    statusVariant: "award",
-    insightLabel: { ko: "🏆 핵심 성과", en: "🏆 Key Achievement" },
-    learnedInsight: {
-      ko: "글로벌 베스트 프랙티스로 채택 — 전 세계 지사의 극찬을 받았습니다.",
-      en: "Adopted as a global best practice — praised by subsidiaries worldwide.",
-    },
-  },
-  {
-    title: { ko: "Coaching on the Floor 대시보드", en: "Coaching on the Floor Dashboard" },
-    emoji: "📋",
-    domain: { ko: "현장 운영", en: "Frontline Operations" },
-    description: {
-      ko: "현장 인원의 OPEN+ 활동 이력과 역량 수준을 단일 페이지에서 통합 조회하는 코칭 전용 대시보드. 현장 리더가 데이터를 넘겨보며 즉시 코칭 포인트를 식별할 수 있도록, 꼭 필요한 정보만 심플하게 배치.",
-      en: "A coaching dashboard that consolidates OPEN+ activity history and capability levels onto a single page. Curated with only the essentials, so frontline leaders can scan the data and instantly spot coaching points.",
-    },
-    techStack: ["Power BI", "역량관리", "현장코칭", "OPEN+"],
-    status: "active",
-    statusLabel: { ko: "🌍 GLOBAL RECOGNITION", en: "🌍 GLOBAL RECOGNITION" },
-    statusVariant: "award",
-    insightLabel: { ko: "🏆 핵심 성과", en: "🏆 Key Achievement" },
-    learnedInsight: {
-      ko: "타 국가 시연 시 “우리가 필요했던 것”이라는 반응.",
-      en: "When demoed in other countries: “this is exactly what we needed.”",
-    },
-  },
-  {
-    title: { ko: "사내 Power BI & 데이터 리터러시 교육", en: "In-house Power BI & Data Literacy Training" },
-    emoji: "📣",
-    domain: { ko: "데이터 역량화", en: "Data Empowerment" },
-    description: {
-      ko: "도구 사용법이 아닌 ‘데이터를 읽는 사고법’을 전수하는 입문 교육. 현장 엔지니어들이 스스로 데이터를 읽고, 질문을 던지고, 개선 액션을 도출할 수 있도록 역량화. Power BI는 도구일 뿐 — 중요한 건 데이터를 의사결정으로 연결하는 사고법.",
-      en: "An introductory course teaching not tool mechanics but the thinking to read data. Equips frontline engineers to read data themselves, ask the right questions, and derive improvement actions. Power BI is just a tool — what matters is the thinking that turns data into decisions.",
-    },
-    techStack: ["Power BI", "Data Literacy", "교육설계", "역량화"],
-    status: "active",
-    statusLabel: { ko: "● ONGOING", en: "● ONGOING" },
-    statusVariant: "active",
-    insightLabel: { ko: "🏆 핵심 성과", en: "🏆 Key Achievement" },
-    learnedInsight: {
-      ko: "현장 엔지니어의 자율적 데이터 기반 의사결정 체계 확립.",
-      en: "Established a self-driven, data-based decision-making culture among frontline engineers.",
-    },
-  },
-  {
     title: { ko: "Agile O365 Learning Platform", en: "Agile O365 Learning Platform" },
     emoji: "🔄",
     domain: { ko: "Education Technology", en: "Education Technology" },
@@ -313,6 +265,61 @@ export const EXPLORATIONS: Exploration[] = [
       ko: "작은 자동화가 큰 습관을 만듦. 매일 자동 녹음된 파일이 Telegram으로 오면 학습의 장벽이 0이 됨.",
       en: "Small automations build big habits. When auto-recorded files arrive via Telegram daily, the learning barrier drops to zero.",
     },
+  },
+];
+
+// ========================================================================
+// Manufacturing Data Practice — Power BI 데이터 시각화 대표작
+// 글로벌 베스트 프랙티스로 채택된 현장 데이터 시각화 산출물
+// ========================================================================
+export const MANUFACTURING_DATA_PRACTICE: SignatureWork[] = [
+  {
+    title: { ko: "OEE 층별분석 대시보드", en: "OEE Stratified Analysis Dashboard" },
+    emoji: "🏭",
+    domain: { ko: "제조 데이터 시각화", en: "Manufacturing Data Visualization" },
+    credential: { ko: "🏆 GLOBAL BEST PRACTICE", en: "🏆 GLOBAL BEST PRACTICE" },
+    credentialVariant: "award",
+    description: {
+      ko: "브랜드(SKU)별, 근무조별 OEE 값과 손실 경향성을 실시간으로 파악할 수 있는 Power BI 대시보드. 기존에는 글로벌 데이터를 단순 집계하여 top management용으로만 사용되던 것을, 공장장부터 현장 직원까지 모든 계층이 일일 의사결정에 활용하도록 재설계.",
+      en: "A Power BI dashboard that surfaces OEE values and loss trends by brand (SKU) and shift in real time. What used to be simple global rollups for top management only was redesigned so every layer — from plant managers to frontline operators — uses it for daily decision-making.",
+    },
+    outcome: {
+      ko: "글로벌 베스트 프랙티스로 채택 — 전 세계 지사의 극찬을 받았습니다.",
+      en: "Adopted as a global best practice — praised by subsidiaries worldwide.",
+    },
+    tags: ["Power BI", "OEE", "손실분석", "글로벌 확산"],
+  },
+  {
+    title: { ko: "Coaching on the Floor 대시보드", en: "Coaching on the Floor Dashboard" },
+    emoji: "📋",
+    domain: { ko: "현장 운영", en: "Frontline Operations" },
+    credential: { ko: "🌍 GLOBAL RECOGNITION", en: "🌍 GLOBAL RECOGNITION" },
+    credentialVariant: "award",
+    description: {
+      ko: "현장 인원의 OPEN+ 활동 이력과 역량 수준을 단일 페이지에서 통합 조회하는 코칭 전용 대시보드. 현장 리더가 데이터를 넘겨보며 즉시 코칭 포인트를 식별할 수 있도록, 꼭 필요한 정보만 심플하게 배치.",
+      en: "A coaching dashboard that consolidates OPEN+ activity history and capability levels onto a single page. Curated with only the essentials, so frontline leaders can scan the data and instantly spot coaching points.",
+    },
+    outcome: {
+      ko: "타 국가 시연 시 “우리가 필요했던 것”이라는 반응.",
+      en: "When demoed in other countries: “this is exactly what we needed.”",
+    },
+    tags: ["Power BI", "역량관리", "현장코칭", "OPEN+"],
+  },
+  {
+    title: { ko: "사내 Power BI & 데이터 리터러시 교육", en: "In-house Power BI & Data Literacy Training" },
+    emoji: "📣",
+    domain: { ko: "데이터 역량화", en: "Data Empowerment" },
+    credential: { ko: "● ONGOING", en: "● ONGOING" },
+    credentialVariant: "active",
+    description: {
+      ko: "도구 사용법이 아닌 ‘데이터를 읽는 사고법’을 전수하는 입문 교육. 현장 엔지니어들이 스스로 데이터를 읽고, 질문을 던지고, 개선 액션을 도출할 수 있도록 역량화. Power BI는 도구일 뿐 — 중요한 건 데이터를 의사결정으로 연결하는 사고법.",
+      en: "An introductory course teaching not tool mechanics but the thinking to read data. Equips frontline engineers to read data themselves, ask the right questions, and derive improvement actions. Power BI is just a tool — what matters is the thinking that turns data into decisions.",
+    },
+    outcome: {
+      ko: "현장 엔지니어의 자율적 데이터 기반 의사결정 체계 확립.",
+      en: "Established a self-driven, data-based decision-making culture among frontline engineers.",
+    },
+    tags: ["Power BI", "Data Literacy", "교육설계", "역량화"],
   },
 ];
 

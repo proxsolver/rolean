@@ -40,7 +40,7 @@ export default function ContactForm() {
         <p className={styles.subKicker}>Get In Touch</p>
         <h2 className={styles.sectionTitle}>공동 작업 및 기회 조율</h2>
         <p className={styles.contactIntro}>
-          IoT 임베디드, 스마트팩토리 공정 컨설팅, 혹은 깔끔하고 직관적인 프론트엔드/백엔드 최적화 구축 등 모든 협업 제안을 환영합니다.
+          Power BI 대시보드 및 데이터 시각화, 스마트팩토리 공정 컨설팅, 혹은 깔끔하고 직관적인 프론트엔드/백엔드 최적화 구축 등 모든 협업 제안을 환영합니다.
         </p>
       </div>
 

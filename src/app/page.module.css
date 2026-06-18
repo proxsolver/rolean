@@ -295,6 +295,12 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .interestsGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 .interestIcon {
   font-size: 2.2rem;
   margin-bottom: 1rem;
@@ -479,6 +485,110 @@
   background: rgba(255, 183, 77, 0.12);
   color: #ffb74d;
   border: 1px solid rgba(255, 183, 77, 0.2);
+}
+
+/* ================================================================== */
+/* Manufacturing Data Practice — achievement-forward signature cards   */
+/* ================================================================== */
+.signatureGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .signatureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .signatureGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.signatureCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.signatureCredential {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.variant-award {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.1));
+  color: var(--color-gold);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 26px -8px rgba(212, 175, 55, 0.35);
+}
+
+.variant-active {
+  background: rgba(76, 175, 80, 0.14);
+  color: #81c784;
+  border: 1px solid rgba(76, 175, 80, 0.25);
+}
+
+.signatureHead {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.signatureEmoji {
+  font-size: 1.6rem;
+}
+
+.signatureTitle {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  color: var(--color-ivory);
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.signatureDomain {
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.signatureDesc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-silver);
+  margin-bottom: 1rem;
+}
+
+.signatureOutcome {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--color-ivory);
+  font-weight: 500;
+  margin-top: auto;
+  margin-bottom: 1.25rem;
+  padding: 0.6rem 0.85rem;
+  background: rgba(212, 175, 55, 0.06);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 8px 8px 0;
+}
+
+.signatureTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 /* Projects Grid */

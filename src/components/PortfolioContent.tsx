@@ -2,6 +2,7 @@ import styles from "@/app/page.module.css";
 import {
   PERSON,
   KEY_METRICS,
+  MANUFACTURING_DATA_PRACTICE,
   PROJECTS,
   EXPLORATIONS,
   INTERESTS,
@@ -12,6 +13,7 @@ import AICopilot from "@/components/AICopilot";
 import CoffeeChatForm from "@/components/CoffeeChat/CoffeeChatForm";
 import ExplorationCard from "@/components/ExplorationCard";
 import LanguageToggle from "@/components/LanguageToggle";
+import SignatureWorkCard from "@/components/SignatureWorkCard";
 
 export default function PortfolioContent({ locale }: { locale: Locale }) {
   return (
@@ -70,6 +72,9 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
             rolean<span className={styles.logoDot}>.</span>org
           </a>
           <nav className={styles.nav} aria-label="Main navigation">
+            <a href="#practice" className={styles.navLink}>
+              {t("nav.practice", locale)}
+            </a>
             <a href="#about" className={styles.navLink}>
               {t("nav.philosophy", locale)}
             </a>
@@ -139,6 +144,32 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
                   {metric.context[locale]}
                 </span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Manufacturing Data Practice */}
+      <section
+        id="practice"
+        className={styles.section}
+        aria-label={t("practice.title", locale)}
+      >
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <p className={styles.subKicker}>
+              {t("practice.kicker", locale)}
+            </p>
+            <h2 className={styles.sectionTitle}>
+              {t("practice.title", locale)}
+            </h2>
+            <p className={styles.sectionDesc}>
+              {t("practice.desc", locale)}
+            </p>
+          </div>
+          <div className={styles.signatureGrid}>
+            {MANUFACTURING_DATA_PRACTICE.map((work, idx) => (
+              <SignatureWorkCard key={idx} item={work} locale={locale} />
             ))}
           </div>
         </div>

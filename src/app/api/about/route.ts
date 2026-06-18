@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { PERSON, KEY_METRICS, PROJECTS, EXPLORATIONS, INTERESTS, TIMELINE } from "@/domains/profile/data";
+import { PERSON, KEY_METRICS, PROJECTS, EXPLORATIONS, INTERESTS, TIMELINE, MANUFACTURING_DATA_PRACTICE } from "@/domains/profile/data";
 
 export async function GET() {
   const profile = {
@@ -53,6 +53,15 @@ export async function GET() {
       techStack: e.techStack,
       status: e.status,
       learnedInsight: e.learnedInsight,
+    })),
+
+    manufacturingDataPractice: MANUFACTURING_DATA_PRACTICE.map((w) => ({
+      title: w.title,
+      domain: w.domain,
+      credential: w.credential,
+      description: w.description,
+      outcome: w.outcome,
+      tags: w.tags,
     })),
 
     career: TIMELINE.map((t) => ({

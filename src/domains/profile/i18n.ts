@@ -11,16 +11,17 @@ export const UI: Record<string, Record<Locale, string>> = {
   "nav.explorations": { ko: "Exploration", en: "Exploration" },
   "nav.projects": { ko: "Projects", en: "Projects" },
   "nav.experience": { ko: "Experience", en: "Experience" },
+  "nav.practice": { ko: "Practice", en: "Practice" },
   "nav.contact": { ko: "Contact", en: "Contact" },
 
   // Hero
   "hero.kicker": { ko: "Domain First · AI Always", en: "Domain First · AI Always" },
   "hero.title.line1": {
-    ko: "공장 데이터를 전 직원이",
+    ko: "공장 데이터를",
     en: "Making Factory Data",
   },
   "hero.title.line2": {
-    ko: "읽게 만드는 사람.",
+    ko: "전 직원이 읽게 만드는 사람.",
     en: "Readable for Everyone.",
   },
   "hero.desc": {
@@ -57,6 +58,17 @@ export const UI: Record<string, Record<Locale, string>> = {
   "expertise.title": {
     ko: "산업 융합 핵심 역량 및 전문 분야",
     en: "Industrial Convergence — Core Domains of Expertise",
+  },
+
+  // Manufacturing Data Practice
+  "practice.kicker": { ko: "Manufacturing Data Practice", en: "Manufacturing Data Practice" },
+  "practice.title": {
+    ko: "글로벌 베스트 프랙티스로 채택된 데이터 시각화",
+    en: "Data Visualization Adopted as Global Best Practice",
+  },
+  "practice.desc": {
+    ko: "Power BI로 구축한 현장 데이터 시각화 — 브랜드(SKU)·근무조별 OEE와 손실을 한눈에. top management용 집계가 아닌, 현장이 내일 당장 쓸 수 있는 시각화입니다. OEE 층별분석 대시보드는 글로벌 베스트 프랙티스로 채택되었습니다.",
+    en: "Frontline data visualization built in Power BI — OEE and losses by brand (SKU) and shift, at a glance. Not top-management rollups, but visualizations the floor can act on tomorrow. The OEE stratified-analysis dashboard was adopted as a global best practice.",
   },
 
   // Explorations

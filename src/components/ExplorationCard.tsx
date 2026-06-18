@@ -17,15 +17,13 @@ export default function ExplorationCard({
       <div className={styles.explorationHeader}>
         <span className={styles.explorationEmoji}>{item.emoji}</span>
         <span
-          className={`${styles.statusBadge} ${styles[`status-${item.statusVariant ?? item.status}`]}`}
+          className={`${styles.statusBadge} ${styles[`status-${item.status}`]}`}
         >
-          {item.statusLabel
-            ? item.statusLabel[locale]
-            : item.status === "active"
-              ? "Active"
-              : item.status === "completed"
-                ? "Completed"
-                : "Prototype"}
+          {item.status === "active"
+            ? "Active"
+            : item.status === "completed"
+              ? "Completed"
+              : "Prototype"}
         </span>
       </div>
       <h3 className={styles.explorationTitle}>{item.title[locale]}</h3>
@@ -40,7 +38,7 @@ export default function ExplorationCard({
       </div>
       <div className={styles.insightBox}>
         <p className={styles.insightLabel}>
-          {item.insightLabel?.[locale] ?? t("explorations.insight", locale)}
+          {t("explorations.insight", locale)}
         </p>
         <p className={styles.insightText}>
           {item.learnedInsight[locale]}

@@ -1,4 +1,4 @@
-import { TIMELINE, PROJECTS, INTERESTS, EXPLORATIONS, KEY_METRICS, PERSON } from "../profile/data";
+import { TIMELINE, PROJECTS, EXPLORATIONS, MANUFACTURING_DATA_PRACTICE, KEY_METRICS, PERSON } from "../profile/data";
 
 export interface ChatMessage {
   role: "user" | "assistant";
@@ -22,8 +22,7 @@ export function generateAgentResponse(query: string, history: ChatMessage[]): st
 
 ${PERSON.title.en} at ${PERSON.org} (${PERSON.orgType})
 
-${PERSON.experience.en}. Specializing in:
-${PERSON.domains.map(d => `- ${d}`).join("\n")}
+${PERSON.experience.en} — making factory data readable for everyone. Lean/IWS methodology meets Power BI: complex plant data compressed into visualizations that operators and executives alike can act on. The OEE stratified-analysis and coaching dashboards built here were adopted as worldwide best practices.
 
 📊 **Key Achievement Metrics:**
 ${metrics}
@@ -31,52 +30,58 @@ ${metrics}
 🏆 **Certifications:**
 ${PERSON.certifications.map(c => `- ${c}`).join("\n")}
 
-💡 Core philosophy: **"${PERSON.tagline}"** — combining deep manufacturing domain expertise with modern software engineering and AI.
+💡 Core philosophy: **"${PERSON.tagline}"** — deep manufacturing domain expertise, delivered as data the whole organization can read and act on.
 
 🔗 Explore more: **rolean.org**`;
   }
 
   // ========================================================================
-  // 2. ESP32 / IoT
+  // 2. ESP32 / IoT — where the data pipeline begins
   // ========================================================================
   if (
     q.includes("esp32") || q.includes("iot") || q.includes("임베디드") || q.includes("센서") ||
     q.includes("하드웨어") || q.includes("embedded") || q.includes("edge") || q.includes("mqtt")
   ) {
-    return `🔌 **ESP32 & IoT — ${PERSON.knownAs}'s Embedded Engineering:**
+    return `🔌 **ESP32 & IoT — where ${PERSON.knownAs}'s data pipeline begins:**
 
-- **Sensor Data Pipeline Design**: Raw sensor readings → structured, reliable data streams for real-time analytics
-- **Industrial OT Integration**: PTC Kepware bridging ESP32 prototypes to factory-scale industrial control networks
-- **Edge Computing**: Processing data at source, reducing latency in constrained OT environments
+- **Sensor Data Pipeline Design**: Raw sensor readings → structured, reliable streams that feed real-time analytics and Power BI dashboards
+- **Industrial OT Integration**: PTC Kepware bridging ESP32 prototypes to factory-scale control networks
+- **Edge Computing**: Processing data at source to cut latency in constrained OT environments
 
-🏭 As Technical Services Supervisor, Harry leads factory equipment integration via PTC Kepware into secure OT infrastructure — all informed by 15 years of hands-on manufacturing domain knowledge.
+🏭 As Technical Services Supervisor, Harry connects factory equipment via PTC Kepware into secure OT infrastructure — the trustworthy foundation that makes the Manufacturing Data Practice dashboards real-time and credible.
 
-💡 This combination of embedded hardware skills and industrial-scale OT experience is exceptionally rare.`;
+💡 Hardware is where the data starts; the real value is making that data readable and actionable for everyone downstream.`;
   }
 
   // ========================================================================
-  // 3. Smart Factory
+  // 3. Smart Factory / Manufacturing Data Practice
   // ========================================================================
   if (
     q.includes("smart") || q.includes("팩토리") || q.includes("공장") || q.includes("factory") ||
     q.includes("kepware") || q.includes("설비") || q.includes("mes") || q.includes("모니터링") ||
-    q.includes("monitoring") || q.includes("oee") || q.includes("디지털")
+    q.includes("monitoring") || q.includes("oee") || q.includes("디지털") ||
+    q.includes("power bi") || q.includes("powerbi") || q.includes("데이터") || q.includes("대시보드") ||
+    q.includes("시각화") || q.includes("visualization") || q.includes("리터러시") || q.includes("literacy") ||
+    q.includes("층별분석") || q.includes("coaching") || q.includes("코칭") || q.includes("open+") ||
+    q.includes("best practice") || q.includes("베스트")
   ) {
-    return `🏭 **Smart Factory — ${PERSON.knownAs}'s Industrial IoT Leadership:**
+    const practice = MANUFACTURING_DATA_PRACTICE.map(w =>
+      `**${w.emoji} ${w.title.en}** [${w.credential.en}]\n  ${w.description.en}\n  🎯 ${w.outcome.en}`
+    ).join("\n\n");
+    return `📊 **Manufacturing Data Practice — ${PERSON.knownAs}'s Power BI Data Visualization:**
 
-**Infrastructure:**
-- **PTC Kepware**: Core OPC UA gateway connecting diverse factory equipment
-- **Power BI Dashboards**: Real-time visualization of equipment status & production KPIs
-- **Secure OT Network**: Multi-layered segmentation with air-gapped zones
+Harry's signature work: turning complex factory data into visualizations every layer — from executives to frontline operators — can act on tomorrow.
 
-**Organizational:**
-- **PM Pillar Owner**: Equipment asset management, reliability, R&M cost optimization
-- **IT/OT Bridge Architecture**: Hybrid design connecting manufacturing data to IT analytics
-- **AI Integration Pipeline**: Foundation for predictive maintenance & anomaly detection
+${practice}
+
+🏭 **Behind the dashboards — Smart Factory infrastructure:**
+- **PTC Kepware**: OPC UA gateway connecting diverse factory equipment into one data pipeline
+- **Power BI + OEE stratified analysis**: brand(SKU)- and shift-level loss trends in real time
+- **Secure OT network**: multi-layered segmentation feeding trustworthy data
 
 📊 **Results:** OEE +115% · MTBF +208% · Downtime -61% · Waste -82%
 
-💡 Harry's approach is unique — grounded in 15 years of plant floor knowledge, he doesn't just install sensors, he understands what the data *means*.`;
+💡 Not top-management rollups — Harry designs what the floor can use today. Grounded in 15 years of plant-floor knowledge: he doesn't just pipe data, he understands what it *means*.`;
   }
 
   // ========================================================================
@@ -97,13 +102,13 @@ ${PERSON.certifications.map(c => `- ${c}`).join("\n")}
 **Quantified Impact:**
 - OEE **+115%** · MTBF **+208%** · Unplanned Downtime **-61%** · Waste **-82%**
 
-**Applied to Software Engineering:**
-- Value-Added Focus — only code that delivers business value
-- Waste Elimination — no architectural bloat
+**Applied to Software & Data Engineering:**
+- Value-Added Focus — only code and metrics that deliver business value
+- Waste Elimination — no architectural bloat, no chart without a decision
 - Continuous Improvement (Kaizen) — every iteration is PDCA
 - Standardized Work — reliable patterns and conventions
 
-💡 This philosophy is the foundation of **"${PERSON.tagline}"** — Lean thinking applied to both manufacturing AND software.`;
+💡 This philosophy is the foundation of **"${PERSON.tagline}"** — Lean decides *what* to measure; Power BI makes it *visible* to everyone.`;
   }
 
   // ========================================================================
@@ -123,7 +128,7 @@ ${PERSON.certifications.map(c => `- ${c}`).join("\n")}
 
 Harry understands the triad: **Availability** (production can't stop) → **Safety** (people nearby) → **Integrity** (no tampering).
 
-💡 This rare IT/OT security combination makes Harry uniquely positioned for production-grade Smart Factory systems.`;
+💡 Secure, trustworthy data is what makes the Manufacturing Data Practice dashboards credible on the production floor — security and readability are two sides of the same coin.`;
   }
 
   // ========================================================================
@@ -141,7 +146,7 @@ Harry understands the triad: **Availability** (production can't stop) → **Safe
         : "";
       return `**${t.period}** — ${t.role.en}\n  ${t.company.en} · ${t.companyType}\n  ${t.description.en}${achs}`;
     }).join("\n\n");
-    return `💼 **${PERSON.knownAs} — Career Timeline:**\n\n${jobs}\n\n💡 From shipbuilding (LNG carriers) → aluminum rolling → global FMCG → Smart Factory & software engineering. A uniquely valuable cross-domain perspective.`;
+    return `💼 **${PERSON.knownAs} — Career Timeline:**\n\n${jobs}\n\n💡 From shipbuilding (LNG carriers) → aluminum rolling → global FMCG → manufacturing data visualization & software engineering. A cross-domain perspective that turns plant-floor knowledge into data everyone can use.`;
   }
 
   // ========================================================================
@@ -173,7 +178,7 @@ Harry understands the triad: **Availability** (production can't stop) → **Safe
     const explorations = EXPLORATIONS.map(e =>
       `${e.emoji} **${e.title.en}** [${e.status.toUpperCase()}] — ${e.domain.en}\n  ${e.description.en}\n  Stack: ${e.techStack.join(", ")}\n  💡 ${e.learnedInsight.en}`
     ).join("\n\n");
-    return `🔬 **${PERSON.knownAs}'s 2026 Exploration Journey:**\n\nEvery learning experiment becomes a working prototype or production system.\n\n${explorations}\n\n🔗 Each demonstrates: **domain knowledge + software engineering = unique value creation**.`;
+    return `🔬 **${PERSON.knownAs}'s 2026 Exploration Journey:**\n\nLearning experiments — translating manufacturing domain knowledge into software, then validating each lesson through a real project.\n\n${explorations}\n\n🔗 Each demonstrates: **domain knowledge + software engineering = unique value creation**.`;
   }
 
   // ========================================================================
@@ -191,8 +196,9 @@ Harry understands the triad: **Availability** (production can't stop) → **Safe
 **Frontend:** Next.js 15/16, React 19, TypeScript 5, Tailwind CSS, shadcn/ui, CSS Modules
 **Backend:** Node.js, Express, Prisma ORM, SQLite/MySQL, REST API, JWT Auth
 **AI & Data:** Z.ai SDK, OpenAI API, Claude API, RAG, Multi-agent systems
+**Manufacturing Data:** Power BI, OEE stratified analysis, data storytelling, data democratization
 **Infrastructure:** PM2, Cloudflare Tunnel, Docker, Nginx
-**Industrial:** PTC Kepware (OPC UA), Power BI, SCADA/ICS protocols, OT networking
+**Industrial:** PTC Kepware (OPC UA), SCADA/ICS protocols, OT networking
 
 🏗️ **Philosophy**: "Lean Engineering" — start minimal, measure what matters, iterate. Every component must justify its existence through delivered value.`;
   }
@@ -213,7 +219,7 @@ Harry understands the triad: **Availability** (production can't stop) → **Safe
 - **Method**: 1:1 GROW coaching + Power BI digital collaboration
 - **Approach**: Data-driven decisions, transparent KPIs, empowering tools
 
-💡 Same philosophy translates to software: transparent communication, data-driven decisions, building systems that make people more effective.`;
+💡 Same philosophy translates to software and data: transparent communication, data-driven decisions, building systems that make people more effective.`;
   }
 
   // ========================================================================
@@ -227,13 +233,15 @@ Harry understands the triad: **Availability** (production can't stop) → **Safe
   ) {
     return `🧠 **"${PERSON.tagline}" — Core Philosophy:**
 
-**Domain First**: Deeply understand the problem domain before writing code. 15 years in manufacturing means software that *manufacturing people actually need*.
+**Domain First**: 15 years on the plant floor means software and data that *manufacturing people actually need* — not what looks impressive to management.
 
-**AI Always**: Every project considers "How can AI augment this?" — not AI for AI's sake, but AI as a force multiplier.
+**Data Democratization**: A dashboard only matters if the frontline can read it and act tomorrow. OEE, loss trends, coaching — visualized so every layer decides daily, not just top management.
+
+**AI Always**: Every project asks "How can AI augment this?" — AI as a force multiplier, never AI for its own sake.
 
 **Lean Engineering**: Value-Added Focus · Waste Elimination · Kaizen · Standardized Work · Respect for People
 
-💡 The same Lean principles that eliminated 82% waste in manufacturing are applied to software — no unnecessary complexity, streamlining data flows, building only what creates genuine value.`;
+💡 The same Lean principles that eliminated 82% waste in manufacturing apply to data — strip away the noise, keep only what drives a decision.`;
   }
 
   // ========================================================================
@@ -258,7 +266,7 @@ Harry understands the triad: **Availability** (production can't stop) → **Safe
   ) {
     return `☕ **Connect with ${PERSON.knownAs}:**
 
-Available for: IWS/TS coaching · Power BI dashboards · Smart Factory architecture · Vibe Coding intro · IT/OT convergence strategy
+Available for: Power BI dashboards & data visualization · OEE/loss analysis design · data literacy training · Lean/IWS coaching · Smart Factory architecture
 
 📅 Book via the Coffee Chat section on this page
 📧 Email: ${PERSON.email}
@@ -271,19 +279,20 @@ Available for: IWS/TS coaching · Power BI dashboards · Smart Factory architect
   // ========================================================================
   return `🤖 안녕하세요! **${PERSON.nameEn} (${PERSON.name})**의 AI Copilot입니다.
 
-**"${PERSON.tagline}"** — ${PERSON.experience.ko}
+**"${PERSON.tagline}"** — ${PERSON.experience.ko}. 공장 데이터를 경영진부터 현장 직원까지 모두가 읽을 수 있게 만듭니다.
 
 📋 **질문 키워드:**
 - 👤 **"Harry가 누구야?"** — 인물 소개 및 핵심 성과
-- 🔌 **ESP32 / IoT** — 임베디드 및 산업 IoT
-- 🏭 **Smart Factory** — Kepware, 실시간 모니터링
-- 📊 **Lean / IWS** — 이탈리아 STA, OEE 115%
-- 🔐 **OT Security** — 산업용 보안 아키텍처
-- 💼 **경력** — 조선소 → FMCG → 소프트웨어
+- 📊 **Power BI / 데이터 시각화** — OEE 층별분석, 글로벌 베스트 프랙티스
+- 🏭 **Smart Factory** — Kepware, 실시간 데이터 파이프라인
+- 🔌 **ESP32 / IoT** — 데이터 파이프라인의 시작
+- 📊 **Lean / IWS** — 무엇을 측정할지 결정
+- 🔐 **OT Security** — 신뢰할 수 있는 데이터의 기반
+- 💼 **경력** — 조선소 → FMCG → 데이터 시각화
 - 🎯 **프로젝트** — 오픈 서비스 포트폴리오
 - 🔬 **탐구 2026** — 학습 여정 프로젝트
 - 💻 **기술 스택** — 개발 도구 및 아키텍처
-- 🧠 **철학** — Lean Engineering, Domain First
+- 🧠 **철학** — 데이터 민주화, Domain First
 - 👥 **리더십** — NPS -45→+35, 조직 매니징
 - ☕ **컨택** — 커피챗 및 협업 제안
 

@@ -13,7 +13,7 @@ export default function AICopilot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "🤖 안녕하세요! Harry의 AI Copilot입니다. 저의 15년 제조 도메인(Smart Factory, Lean/IWS, OT 보안) 경력과 포트폴리오에 대해 물어보세요! 아래 추천 키워드를 클릭하거나 입력창에 질문해주시면 즉시 답변해 드릴게요.",
+      content: "🤖 안녕하세요! Harry의 AI Copilot입니다. 공장 데이터를 경영진부터 현장 직원까지 모두가 읽게 만드는 — Power BI 데이터 시각화(글로벌 베스트 프랙티스) · Lean/IWS · 15년 제조 도메인 경력에 대해 물어보세요! 아래 추천 키워드를 클릭하거나 질문해주시면 즉시 답변해 드릴게요.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -21,9 +21,9 @@ export default function AICopilot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const suggestions = [
-    { label: "🔌 ESP32", query: "ESP32 및 IoT 역량에 대해 알려줘" },
-    { label: "🏭 Smart Factory", query: "Smart Factory 구축 경험이 궁금해" },
-    { label: "📊 Lean/IWS", query: "Lean Operations 및 IWS 성과를 보여줘" },
+    { label: "📊 Power BI", query: "Power BI 데이터 시각화 대표작을 보여줘" },
+    { label: "🏆 베스트 프랙티스", query: "OEE 층별분석 대시보드 성과가 궁금해" },
+    { label: "🏭 Smart Factory", query: "Smart Factory 데이터 파이프라인 구축 경험이 궁금해" },
     { label: "💼 경력 요약", query: "전체 커리어 타임라인 보여줘" },
   ];
 

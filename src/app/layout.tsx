@@ -18,15 +18,19 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL("https://rolean.org"),
   title: {
-    default: "Hyunwoo Lee (Harry) — Domain-First Engineer | rolean.org",
+    default: "Hyunwoo Lee (Harry) — Making Factory Data Readable | rolean.org",
     template: "%s | rolean.org",
   },
   description:
-    "Portfolio of Hyunwoo Lee (Harry) — domain-first engineer combining 15 years of manufacturing expertise with software engineering, AI, and Smart Factory innovation.",
+    "Hyunwoo Lee (Harry) — 15 years in manufacturing. Lean/IWS meets Power BI: factory-data visualizations everyone — from operators to executives — can act on. OEE stratified analysis adopted as a global best practice.",
   keywords: [
     "Hyunwoo Lee",
     "Harry Lee",
     "이현우",
+    "Power BI",
+    "Data Visualization",
+    "Data Democratization",
+    "OEE",
     "Smart Factory",
     "Lean Manufacturing",
     "IWS",
@@ -36,8 +40,6 @@ export const metadata: Metadata = {
     "Software Engineer",
     "AI",
     "PTC Kepware",
-    "OEE Optimization",
-    "Vibe Coding",
     "rolean",
   ],
   authors: [{ name: "Hyunwoo Lee (Harry)", url: "https://rolean.org" }],
@@ -60,15 +62,15 @@ export const metadata: Metadata = {
     alternateLocale: "en_US",
     url: "https://rolean.org",
     siteName: "rolean.org",
-    title: "Hyunwoo Lee (Harry) — Domain-First Engineer",
+    title: "Hyunwoo Lee (Harry) — Making Factory Data Readable",
     description:
-      "15+ years in manufacturing meets software engineering. Smart Factory, Lean/IWS, OT Security, AI.",
+      "15 years in manufacturing meets Power BI & Lean. Factory-data visualizations everyone can act on — OEE stratified analysis adopted as a global best practice.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hyunwoo Lee (Harry) — Domain-First Engineer",
+    title: "Hyunwoo Lee (Harry) — Making Factory Data Readable",
     description:
-      "15+ years in manufacturing meets software engineering. Smart Factory, Lean/IWS, OT Security, AI.",
+      "15 years in manufacturing meets Power BI & Lean. Factory-data visualizations everyone can act on — OEE stratified analysis adopted as a global best practice.",
   },
   alternates: {
     canonical: "https://rolean.org",
