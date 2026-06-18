@@ -35,7 +35,7 @@ export interface SignatureWork {
   description: Record<Locale, string>;
   // Prominent achievement line — the headline outcome of the work.
   outcome: Record<Locale, string>;
-  tags: string[];
+  tags: Record<Locale, string[]>;
 }
 
 export interface Interest {
@@ -287,7 +287,10 @@ export const MANUFACTURING_DATA_PRACTICE: SignatureWork[] = [
       ko: "글로벌 베스트 프랙티스로 채택 — 전 세계 지사의 극찬을 받았습니다.",
       en: "Adopted as a global best practice — praised by subsidiaries worldwide.",
     },
-    tags: ["Power BI", "OEE", "손실분석", "글로벌 확산"],
+    tags: {
+      ko: ["Power BI", "OEE", "손실분석", "글로벌 확산"],
+      en: ["Power BI", "OEE", "Loss Analysis", "Global Rollout"],
+    },
   },
   {
     title: { ko: "Coaching on the Floor 대시보드", en: "Coaching on the Floor Dashboard" },
@@ -303,7 +306,10 @@ export const MANUFACTURING_DATA_PRACTICE: SignatureWork[] = [
       ko: "타 국가 시연 시 “우리가 필요했던 것”이라는 반응.",
       en: "When demoed in other countries: “this is exactly what we needed.”",
     },
-    tags: ["Power BI", "역량관리", "현장코칭", "OPEN+"],
+    tags: {
+      ko: ["Power BI", "역량관리", "현장코칭", "OPEN+"],
+      en: ["Power BI", "Competency Mgmt", "Floor Coaching", "OPEN+"],
+    },
   },
   {
     title: { ko: "사내 Power BI & 데이터 리터러시 교육", en: "In-house Power BI & Data Literacy Training" },
@@ -319,7 +325,10 @@ export const MANUFACTURING_DATA_PRACTICE: SignatureWork[] = [
       ko: "현장 엔지니어의 자율적 데이터 기반 의사결정 체계 확립.",
       en: "Established a self-driven, data-based decision-making culture among frontline engineers.",
     },
-    tags: ["Power BI", "Data Literacy", "교육설계", "역량화"],
+    tags: {
+      ko: ["Power BI", "Data Literacy", "교육설계", "역량화"],
+      en: ["Power BI", "Data Literacy", "Curriculum Design", "Empowerment"],
+    },
   },
 ];
 
@@ -368,7 +377,7 @@ export const INTERESTS: Interest[] = [
     keywords: ["OT Security", "ICS", "SCADA", "Air-Gap"],
   },
   {
-    icon: "📊",
+    icon: "📈",
     title: "데이터 시각화 / Power BI",
     titleEn: "Data Visualization / Power BI",
     desc: {

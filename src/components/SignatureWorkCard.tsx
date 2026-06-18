@@ -26,7 +26,7 @@ export default function SignatureWorkCard({
       <p className={styles.signatureDesc}>{item.description[locale]}</p>
       <p className={styles.signatureOutcome}>🎯 {item.outcome[locale]}</p>
       <div className={styles.signatureTags}>
-        {item.tags.map((tag, tagIdx) => (
+        {item.tags[locale].map((tag, tagIdx) => (
           <span key={tagIdx} className={styles.techTag}>
             {tag}
           </span>

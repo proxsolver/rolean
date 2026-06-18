@@ -97,6 +97,23 @@ export const UI: Record<string, Record<Locale, string>> = {
     en: "Career Benchmarks & Experience",
   },
 
+  // Contact (Coffee Chat)
+  "contact.kicker": { ko: "Coffee Chat", en: "Coffee Chat" },
+  "contact.title": {
+    ko: "협업 제안 및 교육 요청",
+    en: "Collaboration & Training Inquiries",
+  },
+  "contact.intro": {
+    ko: "IWS/TS 업무 가이드, Power BI 데이터 가시화, 스마트팩토리 공정 컨설팅, 바이브 코딩 입문 방법 등 모든 협업과 교육 제안을 환영합니다. 30분 커피챗으로 편하게 이야기 나눠요.",
+    en: "Whether it's IWS/TS guidance, Power BI data visualization, smart factory consulting, or vibe coding — all collaboration and training inquiries welcome. Let's chat over a 30-min coffee chat.",
+  },
+  "contact.cardTitle": { ko: "30분 커피챗", en: "30-Min Coffee Chat" },
+  "contact.cardDesc": {
+    ko: "Google Calendar에서 원하는 날짜와 시간을 선택해 주세요. 미팅 링크는 예약 확정 후 자동으로 안내됩니다.",
+    en: "Pick a date and time in Google Calendar. A meeting link will be sent automatically once your booking is confirmed.",
+  },
+  "contact.cta": { ko: "일정 예약하기", en: "Book a slot" },
+
   // Footer
   "footer.rights": { ko: "All rights reserved.", en: "All rights reserved." },
   "footer.privacy": { ko: "개인정보처리방침", en: "Privacy Policy" },

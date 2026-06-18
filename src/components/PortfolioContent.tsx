@@ -377,7 +377,7 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
       {/* Contact */}
       <section id="contact" className={styles.sectionDark} aria-label="Contact">
         <div className="container">
-          <CoffeeChatForm />
+          <CoffeeChatForm locale={locale} />
         </div>
       </section>
 
