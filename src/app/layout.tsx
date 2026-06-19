@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { defaultTitle, socialTitle, socialDescription } from "@/domains/profile/meta";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,14 +16,10 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const socialTitle = "Hyunwoo Lee (Harry) — Finding Optimal Solutions in Manufacturing Data";
-const socialDescription =
-  "15 years in manufacturing meets Power BI & Lean. The smart factory isn't far off — it starts by connecting the data you already have. OEE stratified analysis adopted as a global best practice.";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://rolean.org"),
   title: {
-    default: "Hyunwoo Lee (Harry) — Finding Optimal Solutions in Manufacturing Data | rolean.org",
+    default: defaultTitle,
     template: "%s | rolean.org",
   },
   description:

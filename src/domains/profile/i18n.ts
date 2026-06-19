@@ -31,6 +31,16 @@ export const UI: Record<string, Record<Locale, string>> = {
   "hero.cta.projects": { ko: "View Projects", en: "View Projects" },
   "hero.cta.career": { ko: "Read Career", en: "Read Career" },
 
+  // Metadata — single source for SEO/social <title> + description
+  "meta.title": {
+    ko: "제조업이 가진 데이터에서 최적해를 찾는 사람",
+    en: "Finding Optimal Solutions in Manufacturing Data",
+  },
+  "meta.description": {
+    ko: "15년 제조 도메인 경력. 스마트팩토리는 먼 곳에 없다 — 기존 데이터의 연결에서 최적해를 찾습니다. Lean/IWS와 Power BI로 구축한 OEE 층별분석 대시보드는 글로벌 베스트 프랙티스로 채택. OEE 115%, MTBF 208%, 폐기율 82% 절감.",
+    en: "15 years in manufacturing. The smart factory isn't far off — it starts by connecting the data you already have to find the optimum. Lean/IWS meets Power BI; my OEE stratified analysis was adopted as a global best practice. OEE +115%, MTBF +208%, Waste -82%.",
+  },
+
   // Metrics
   "metrics.label": { ko: "Key Achievement Metrics", en: "Key Achievement Metrics" },
 
