@@ -13,7 +13,7 @@ export default function AICopilot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "🤖 안녕하세요! Harry의 AI Copilot입니다. 공장 데이터를 경영진부터 현장 직원까지 모두가 읽게 만드는 — Power BI 데이터 시각화(글로벌 베스트 프랙티스) · Lean/IWS · 15년 제조 도메인 경력에 대해 물어보세요! 아래 추천 키워드를 클릭하거나 질문해주시면 즉시 답변해 드릴게요.",
+      content: "🤖 안녕하세요! Harry의 AI Copilot입니다. 제조업이 가진 데이터에서 최적해를 찾는 — Power BI 데이터 시각화(글로벌 베스트 프랙티스) · Lean/IWS · 15년 제조 도메인 경력에 대해 물어보세요! 아래 추천 키워드를 클릭하거나 질문해주시면 즉시 답변해 드릴게요.",
     },
   ]);
   const [input, setInput] = useState("");

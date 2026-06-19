@@ -18,11 +18,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL("https://rolean.org"),
   title: {
-    default: "Hyunwoo Lee (Harry) — Making Factory Data Readable | rolean.org",
+    default: "Hyunwoo Lee (Harry) — Finding Optimal Solutions in Manufacturing Data | rolean.org",
     template: "%s | rolean.org",
   },
   description:
-    "Hyunwoo Lee (Harry) — 15 years in manufacturing. Lean/IWS meets Power BI: factory-data visualizations everyone — from operators to executives — can act on. OEE stratified analysis adopted as a global best practice.",
+    "Hyunwoo Lee (Harry) — 15 years in manufacturing. The smart factory isn't far off — it starts by connecting the data you already have to find the optimum. Lean/IWS meets Power BI; my OEE stratified analysis was adopted as a global best practice.",
   keywords: [
     "Hyunwoo Lee",
     "Harry Lee",
@@ -62,15 +62,15 @@ export const metadata: Metadata = {
     alternateLocale: "en_US",
     url: "https://rolean.org",
     siteName: "rolean.org",
-    title: "Hyunwoo Lee (Harry) — Making Factory Data Readable",
+    title: "Hyunwoo Lee (Harry) — Finding Optimal Solutions in Manufacturing Data",
     description:
-      "15 years in manufacturing meets Power BI & Lean. Factory-data visualizations everyone can act on — OEE stratified analysis adopted as a global best practice.",
+      "15 years in manufacturing meets Power BI & Lean. The smart factory isn't far off — it starts by connecting the data you already have. OEE stratified analysis adopted as a global best practice.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hyunwoo Lee (Harry) — Making Factory Data Readable",
+    title: "Hyunwoo Lee (Harry) — Finding Optimal Solutions in Manufacturing Data",
     description:
-      "15 years in manufacturing meets Power BI & Lean. Factory-data visualizations everyone can act on — OEE stratified analysis adopted as a global best practice.",
+      "15 years in manufacturing meets Power BI & Lean. The smart factory isn't far off — it starts by connecting the data you already have. OEE stratified analysis adopted as a global best practice.",
   },
   alternates: {
     canonical: "https://rolean.org",

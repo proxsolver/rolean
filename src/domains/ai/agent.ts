@@ -279,7 +279,7 @@ Available for: Power BI dashboards & data visualization · OEE/loss analysis des
   // ========================================================================
   return `🤖 안녕하세요! **${PERSON.nameEn} (${PERSON.name})**의 AI Copilot입니다.
 
-**"${PERSON.tagline}"** — ${PERSON.experience.ko}. 공장 데이터를 경영진부터 현장 직원까지 모두가 읽을 수 있게 만듭니다.
+**"${PERSON.tagline}"** — ${PERSON.experience.ko}. 제조업이 가진 데이터에서 최적해를 찾습니다 — 스마트팩토리는 기존 데이터의 연결에서 시작합니다.
 
 📋 **질문 키워드:**
 - 👤 **"Harry가 누구야?"** — 인물 소개 및 핵심 성과

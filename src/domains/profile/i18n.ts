@@ -17,16 +17,16 @@ export const UI: Record<string, Record<Locale, string>> = {
   // Hero
   "hero.kicker": { ko: "Domain First · AI Always", en: "Domain First · AI Always" },
   "hero.title.line1": {
-    ko: "공장 데이터를",
-    en: "Making Factory Data",
+    ko: "제조업이 가진 데이터에서",
+    en: "Finding Optimal Solutions",
   },
   "hero.title.line2": {
-    ko: "전 직원이 읽게 만드는 사람.",
-    en: "Readable for Everyone.",
+    ko: "최적해를 찾는 사람.",
+    en: "in Manufacturing Data.",
   },
   "hero.desc": {
-    ko: "Lean/IWS 방법론과 Power BI를 결합해, 공장 데이터를 경영진부터 현장직원까지 모두가 쓸 수 있는 시각화로 압축합니다. 글로벌 FMCG(Fortune 500)에서 구축한 OEE 층별분석 및 코칭 대시보드가 전 세계 베스트 프랙티스로 채택되었습니다.",
-    en: "Bridging Lean/IWS methodology with Power BI to compress complex factory data into visualizations that everyone—from operators to executives—can act on. My OEE stratified analysis and coaching dashboards, built at a global FMCG (Fortune 500), were adopted as worldwide best practices.",
+    ko: "스마트팩토리는 먼 곳에 없다 — 기존 데이터의 연결에서 시작한다.",
+    en: "The smart factory isn't far off — it begins by connecting the data you already have.",
   },
   "hero.cta.projects": { ko: "View Projects", en: "View Projects" },
   "hero.cta.career": { ko: "Read Career", en: "Read Career" },
