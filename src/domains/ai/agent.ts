@@ -22,7 +22,7 @@ export function generateAgentResponse(query: string, history: ChatMessage[]): st
 
 ${PERSON.title.en} at ${PERSON.org} (${PERSON.orgType})
 
-${PERSON.experience.en} — making factory data readable for everyone. Lean/IWS methodology meets Power BI: complex plant data compressed into visualizations that operators and executives alike can act on. The OEE stratified-analysis and coaching dashboards built here were adopted as worldwide best practices.
+${PERSON.experience.en} — finding optimal solutions in manufacturing data. The smart factory isn't far off; it starts by connecting the data you already have. Lean/IWS meets Power BI to compress complex plant data into visualizations every layer — operators to executives — can act on, and the OEE stratified-analysis dashboards built here were adopted as worldwide best practices.
 
 📊 **Key Achievement Metrics:**
 ${metrics}
@@ -30,7 +30,7 @@ ${metrics}
 🏆 **Certifications:**
 ${PERSON.certifications.map(c => `- ${c}`).join("\n")}
 
-💡 Core philosophy: **"${PERSON.tagline}"** — deep manufacturing domain expertise, delivered as data the whole organization can read and act on.
+💡 Core philosophy: **"${PERSON.tagline}"** — deep manufacturing domain expertise, turned into connected data that reveals the optimal solution.
 
 🔗 Explore more: **rolean.org**`;
   }
@@ -50,7 +50,7 @@ ${PERSON.certifications.map(c => `- ${c}`).join("\n")}
 
 🏭 As Technical Services Supervisor, Harry connects factory equipment via PTC Kepware into secure OT infrastructure — the trustworthy foundation that makes the Manufacturing Data Practice dashboards real-time and credible.
 
-💡 Hardware is where the data starts; the real value is making that data readable and actionable for everyone downstream.`;
+💡 Hardware is where the data starts; the real value comes from connecting it to find the optimal solution.`;
   }
 
   // ========================================================================
@@ -70,7 +70,7 @@ ${PERSON.certifications.map(c => `- ${c}`).join("\n")}
     ).join("\n\n");
     return `📊 **Manufacturing Data Practice — ${PERSON.knownAs}'s Power BI Data Visualization:**
 
-Harry's signature work: turning complex factory data into visualizations every layer — from executives to frontline operators — can act on tomorrow.
+Harry's signature work: finding the optimal solution in complex factory data — turning it into visualizations every layer, from executives to frontline operators, can act on tomorrow.
 
 ${practice}
 
