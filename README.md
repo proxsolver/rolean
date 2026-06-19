@@ -170,4 +170,4 @@ Private. All rights reserved.
 
 ---
 
-**[rolean.org](https://rolean.org)** | [GitHub](https://github.com/proxsolver/rolean)
+**[rolean.org](https://rolean.org)** | [GitHub](https://github.com/proxsolverorg/rolean)

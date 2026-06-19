@@ -24,7 +24,7 @@ No test framework is configured.
 
 ```
 ┌─────────────────────────────────────────────┐
-│  GitHub: proxsolver/rolean (main branch)    │
+│  GitHub: proxsolverorg/rolean (main branch) │
 │  단일 소스 오브 트루스                       │
 └──────────┬──────────────────────┬────────────┘
            │                      │
