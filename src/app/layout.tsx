@@ -15,6 +15,10 @@ const outfit = Outfit({
   display: "swap",
 });
 
+const socialTitle = "Hyunwoo Lee (Harry) — Finding Optimal Solutions in Manufacturing Data";
+const socialDescription =
+  "15 years in manufacturing meets Power BI & Lean. The smart factory isn't far off — it starts by connecting the data you already have. OEE stratified analysis adopted as a global best practice.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://rolean.org"),
   title: {
@@ -62,15 +66,13 @@ export const metadata: Metadata = {
     alternateLocale: "en_US",
     url: "https://rolean.org",
     siteName: "rolean.org",
-    title: "Hyunwoo Lee (Harry) — Finding Optimal Solutions in Manufacturing Data",
-    description:
-      "15 years in manufacturing meets Power BI & Lean. The smart factory isn't far off — it starts by connecting the data you already have. OEE stratified analysis adopted as a global best practice.",
+    title: socialTitle,
+    description: socialDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hyunwoo Lee (Harry) — Finding Optimal Solutions in Manufacturing Data",
-    description:
-      "15 years in manufacturing meets Power BI & Lean. The smart factory isn't far off — it starts by connecting the data you already have. OEE stratified analysis adopted as a global best practice.",
+    title: socialTitle,
+    description: socialDescription,
   },
   alternates: {
     canonical: "https://rolean.org",
