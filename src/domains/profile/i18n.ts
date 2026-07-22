@@ -18,26 +18,33 @@ export const UI: Record<string, Record<Locale, string>> = {
   "nav.skip": { ko: "본문으로 바로가기", en: "Skip to content" },
 
   // Hero
-  "hero.kicker": { ko: "Domain First · AI Always", en: "Domain First · AI Always" },
+  "hero.kicker": {
+    ko: "Manufacturing Intelligence · Field Proven",
+    en: "Manufacturing Intelligence · Field Proven",
+  },
   "hero.title.line1": {
-    ko: "제조업이 가진 데이터에서",
-    en: "Finding Optimal Solutions",
+    ko: "공장의 신호를,",
+    en: "From Factory Signals",
   },
   "hero.title.line2": {
-    ko: "최적해를 찾는 사람.",
-    en: "in Manufacturing Data.",
+    ko: "실행 가능한 결정으로.",
+    en: "to Decisions That Move.",
   },
   "hero.desc": {
-    ko: "스마트팩토리는 먼 곳에 없다 — 기존 데이터의 연결에서 시작한다.",
-    en: "The smart factory isn't far off — it begins by connecting the data you already have.",
+    ko: "흩어진 ERP·MES·설비 데이터를 연결해, 현장이 내일 실행할 수 있는 최적해를 설계한다.",
+    en: "I connect fragmented ERP, MES, and equipment data to design decisions the floor can act on tomorrow.",
   },
   "hero.cta.projects": { ko: "대표 사례 보기", en: "View Case Studies" },
   "hero.cta.career": { ko: "30분 커피챗", en: "Book a Coffee Chat" },
+  "hero.proof.label": { ko: "핵심 경력과 접근 방식", en: "Core credentials and approach" },
+  "hero.proof.experience": { ko: "제조 현장 경험", en: "Manufacturing experience" },
+  "hero.proof.practice": { ko: "베스트 프랙티스 채택", en: "Best practice adopted" },
+  "hero.proof.method": { ko: "도메인 기반 설계", en: "Domain-led engineering" },
 
   // Metadata — single source for SEO/social <title> + description
   "meta.title": {
-    ko: "제조업이 가진 데이터에서 최적해를 찾는 사람",
-    en: "Finding Optimal Solutions in Manufacturing Data",
+    ko: "공장의 신호를 실행 가능한 결정으로",
+    en: "From Factory Signals to Decisions That Move",
   },
   "meta.description": {
     ko: "15년 제조 도메인 경력. 스마트팩토리는 먼 곳에 없다 — 기존 데이터의 연결에서 최적해를 찾습니다. Lean/IWS와 Power BI로 구축한 OEE 층별분석 대시보드는 글로벌 베스트 프랙티스로 채택. OEE 115%, MTBF 208%, 폐기율 82% 절감.",

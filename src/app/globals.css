@@ -1,12 +1,12 @@
 :root {
-  /* Premium Minimalist Palette */
-  --color-obsidian: #0d0f12; /* Deep charcoal obsidian */
-  --color-obsidian-light: #16191f; /* Slightly lighter charcoal for panels */
-  --color-ivory: #fcfcfc; /* Elegant off-white */
-  --color-silver: #a0a5b0; /* Slate silver for body copy */
-  --color-gold: #d4af37; /* Champagne gold accent */
-  --color-gold-hover: #e5c453;
-  --color-gold-dim: rgba(212, 175, 55, 0.15); /* Soft gold glow */
+  /* Industrial signal palette */
+  --color-obsidian: #090b0d;
+  --color-obsidian-light: #12161a;
+  --color-ivory: #f4f4ed;
+  --color-silver: #aeb5be;
+  --color-gold: #f1cb2f;
+  --color-gold-hover: #ffdc52;
+  --color-gold-dim: rgba(241, 203, 47, 0.18);
   
   /* Layout */
   --max-width: 1200px;
@@ -107,10 +107,10 @@ summary:focus-visible {
   align-items: center;
   justify-content: center;
   padding: 0.8rem 1.6rem;
-  background-color: transparent;
-  color: var(--color-gold);
+  background-color: var(--color-gold);
+  color: var(--color-obsidian);
   border: 1px solid var(--color-gold);
-  border-radius: 8px;
+  border-radius: 2px;
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 0.9rem;
@@ -121,17 +121,18 @@ summary:focus-visible {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-gold);
+  background-color: var(--color-ivory);
   color: var(--color-obsidian);
-  box-shadow: 0 0 25px var(--color-gold-dim);
+  border-color: var(--color-ivory);
+  box-shadow: 0 0 36px var(--color-gold-dim);
   transform: translateY(-2px);
 }
 
 /* Glassmorphism panel design */
 .glass-panel {
-  background: #14171c;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
+  background: #101317;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 2px;
   padding: var(--spacing-md);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -139,7 +140,7 @@ summary:focus-visible {
 .glass-panel:hover {
   transform: translateY(-4px);
   border-color: rgba(212, 175, 55, 0.25);
-  background: rgba(22, 25, 31, 0.65);
+  background: #15191e;
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(212, 175, 55, 0.1) inset;
 }
 

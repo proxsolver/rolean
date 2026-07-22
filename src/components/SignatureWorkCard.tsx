@@ -7,24 +7,31 @@ import type { Locale } from "@/domains/profile/i18n";
 export default function SignatureWorkCard({
   item,
   locale,
+  index,
 }: {
   item: SignatureWork;
   locale: Locale;
+  index: number;
 }) {
   return (
     <article className={`glass-panel ${styles.signatureCard}`}>
-      <div
-        className={`${styles.signatureCredential} ${styles[`variant-${item.credentialVariant}`]}`}
-      >
-        {item.credential[locale]}
+      <div className={styles.signatureTopline}>
+        <span className={styles.signatureIndex}>CASE / {String(index + 1).padStart(2, "0")}</span>
+        <div
+          className={`${styles.signatureCredential} ${styles[`variant-${item.credentialVariant}`]}`}
+        >
+          {item.credential[locale]}
+        </div>
       </div>
       <div className={styles.signatureHead}>
-        <span className={styles.signatureEmoji}>{item.emoji}</span>
         <h3 className={styles.signatureTitle}>{item.title[locale]}</h3>
       </div>
       <p className={styles.signatureDomain}>{item.domain[locale]}</p>
       <p className={styles.signatureDesc}>{item.description[locale]}</p>
-      <p className={styles.signatureOutcome}>🎯 {item.outcome[locale]}</p>
+      <p className={styles.signatureOutcome}>
+        <span>{locale === "ko" ? "검증 결과" : "Result"}</span>
+        {item.outcome[locale]}
+      </p>
       <div className={styles.signatureTags}>
         {item.tags[locale].map((tag, tagIdx) => (
           <span key={tagIdx} className={styles.techTag}>

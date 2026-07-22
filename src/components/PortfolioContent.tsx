@@ -13,6 +13,7 @@ import AICopilot from "@/components/AICopilot";
 import CoffeeChatForm from "@/components/CoffeeChat/CoffeeChatForm";
 import DocumentLanguage from "@/components/DocumentLanguage";
 import ExplorationCard from "@/components/ExplorationCard";
+import HeroSignalSystem from "@/components/HeroSignalSystem";
 import ProjectCard from "@/components/ProjectCard";
 import SiteNavigation from "@/components/SiteNavigation";
 import SignatureWorkCard from "@/components/SignatureWorkCard";
@@ -87,9 +88,12 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
       <main id="main-content">
       {/* Hero */}
       <section className={styles.hero} aria-label={locale === "ko" ? "소개" : "Introduction"}>
-        <div className="container">
+        <div className={`${styles.heroLayout} container`}>
           <div className={styles.heroContent}>
-            <p className={styles.heroKicker}>{t("hero.kicker", locale)}</p>
+            <div className={styles.heroKickerRow}>
+              <p className={styles.heroKicker}>{t("hero.kicker", locale)}</p>
+              <span className={styles.heroIndex}>01 / 06</span>
+            </div>
             <h1 className={styles.heroTitle}>
               {t("hero.title.line1", locale)}
               <br />
@@ -113,17 +117,40 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
                 {t("hero.cta.career", locale)}
               </a>
             </div>
+            <div className={styles.heroProof} aria-label={t("hero.proof.label", locale)}>
+              <div>
+                <strong>15Y</strong>
+                <span>{t("hero.proof.experience", locale)}</span>
+              </div>
+              <div>
+                <strong>GLOBAL</strong>
+                <span>{t("hero.proof.practice", locale)}</span>
+              </div>
+              <div>
+                <strong>LEAN × AI</strong>
+                <span>{t("hero.proof.method", locale)}</span>
+              </div>
+            </div>
           </div>
+          <HeroSignalSystem locale={locale} />
+        </div>
+        <div className={styles.heroScrollCue} aria-hidden="true">
+          <span>SCROLL TO EVIDENCE</span>
+          <i />
         </div>
       </section>
 
       {/* Metrics */}
       <section className={styles.metricsSection} aria-label={t("metrics.label", locale)}>
         <div className="container">
-          <h2 className={styles.srOnly}>{t("metrics.title", locale)}</h2>
+          <div className={styles.metricsHeader}>
+            <p>PROOF, NOT PROMISES / 02</p>
+            <h2>{t("metrics.title", locale)}</h2>
+          </div>
           <div className={styles.metricsGrid}>
             {KEY_METRICS.map((metric, idx) => (
               <article key={idx} className={styles.metricCard}>
+                <span className={styles.metricIndex}>{String(idx + 1).padStart(2, "0")}</span>
                 <span className={styles.metricValue}>{metric.value}</span>
                 <span className={styles.metricLabel}>
                   {metric.label[locale]}
@@ -173,7 +200,7 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
           </div>
           <div className={styles.signatureGrid}>
             {MANUFACTURING_DATA_PRACTICE.map((work, idx) => (
-              <SignatureWorkCard key={idx} item={work} locale={locale} />
+              <SignatureWorkCard key={idx} item={work} locale={locale} index={idx} />
             ))}
           </div>
           <div className={styles.sectionActions}>

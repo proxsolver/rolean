@@ -277,7 +277,7 @@ export const MANUFACTURING_DATA_PRACTICE: SignatureWork[] = [
     title: { ko: "OEE 층별분석 대시보드", en: "OEE Stratified Analysis Dashboard" },
     emoji: "🏭",
     domain: { ko: "제조 데이터 시각화", en: "Manufacturing Data Visualization" },
-    credential: { ko: "🏆 GLOBAL BEST PRACTICE", en: "🏆 GLOBAL BEST PRACTICE" },
+    credential: { ko: "GLOBAL BEST PRACTICE", en: "GLOBAL BEST PRACTICE" },
     credentialVariant: "award",
     description: {
       ko: "브랜드(SKU)별, 근무조별 OEE 값과 손실 경향성을 실시간으로 파악할 수 있는 Power BI 대시보드. 기존에는 글로벌 데이터를 단순 집계하여 top management용으로만 사용되던 것을, 공장장부터 현장 직원까지 모든 계층이 일일 의사결정에 활용하도록 재설계.",
@@ -296,7 +296,7 @@ export const MANUFACTURING_DATA_PRACTICE: SignatureWork[] = [
     title: { ko: "Coaching on the Floor 대시보드", en: "Coaching on the Floor Dashboard" },
     emoji: "📋",
     domain: { ko: "현장 운영", en: "Frontline Operations" },
-    credential: { ko: "🌍 GLOBAL RECOGNITION", en: "🌍 GLOBAL RECOGNITION" },
+    credential: { ko: "GLOBAL RECOGNITION", en: "GLOBAL RECOGNITION" },
     credentialVariant: "award",
     description: {
       ko: "현장 인원의 OPEN+ 활동 이력과 역량 수준을 단일 페이지에서 통합 조회하는 코칭 전용 대시보드. 현장 리더가 데이터를 넘겨보며 즉시 코칭 포인트를 식별할 수 있도록, 꼭 필요한 정보만 심플하게 배치.",
