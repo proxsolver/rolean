@@ -2,6 +2,7 @@
 set -e
 
 cd /home/harry/2026/rolean
+export PATH="$HOME/.npm-global/bin:$PATH"
 
 echo "[$(date)] Starting deployment..."
 
@@ -10,7 +11,7 @@ git fetch origin main
 git reset --hard origin/main
 
 # Install dependencies
-npm install
+npm install --include=dev
 
 # Build
 npm run build

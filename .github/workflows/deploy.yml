@@ -13,6 +13,8 @@ jobs:
       - name: Deploy rolean.org
         working-directory: /home/harry/2026/rolean
         run: |
+          export PATH="$HOME/.npm-global/bin:$PATH"
+
           echo "Pulling latest code..."
           git pull origin main
 
@@ -20,7 +22,7 @@ jobs:
           rm -rf .next
 
           echo "Installing dependencies..."
-          npm install --omit=dev=false
+          npm install --include=dev
 
           echo "Building production..."
           npm run build
