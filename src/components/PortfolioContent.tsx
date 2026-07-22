@@ -11,13 +11,25 @@ import {
 import { Locale, t } from "@/domains/profile/i18n";
 import AICopilot from "@/components/AICopilot";
 import CoffeeChatForm from "@/components/CoffeeChat/CoffeeChatForm";
+import DocumentLanguage from "@/components/DocumentLanguage";
 import ExplorationCard from "@/components/ExplorationCard";
-import LanguageToggle from "@/components/LanguageToggle";
+import ProjectCard from "@/components/ProjectCard";
+import SiteNavigation from "@/components/SiteNavigation";
 import SignatureWorkCard from "@/components/SignatureWorkCard";
+import TimelineEntry from "@/components/TimelineEntry";
 
 export default function PortfolioContent({ locale }: { locale: Locale }) {
+  const featuredProjects = PROJECTS.filter((project) =>
+    ["gtasks.rolean.org", "test.rolean.org", "notes.rolean.org"].includes(project.title),
+  );
+  const additionalProjects = PROJECTS.filter((project) => !featuredProjects.includes(project));
+
   return (
     <div className={styles.wrapper}>
+      <DocumentLanguage locale={locale} />
+      <a href="#main-content" className={styles.skipLink}>
+        {t("nav.skip", locale)}
+      </a>
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
@@ -68,38 +80,13 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
       {/* Navigation Header */}
       <header className={styles.header} role="banner">
         <div className={`${styles.headerContainer} container`}>
-          <a href={locale === "en" ? "/en" : "/"} className={styles.logo}>
-            rolean<span className={styles.logoDot}>.</span>org
-          </a>
-          <nav className={styles.nav} aria-label="Main navigation">
-            <a href="#practice" className={styles.navLink}>
-              {t("nav.practice", locale)}
-            </a>
-            <a href="#about" className={styles.navLink}>
-              {t("nav.philosophy", locale)}
-            </a>
-            <a href="#interests" className={styles.navLink}>
-              {t("nav.expertise", locale)}
-            </a>
-            <a href="#explorations" className={styles.navLink}>
-              {t("nav.explorations", locale)}
-            </a>
-            <a href="#projects" className={styles.navLink}>
-              {t("nav.projects", locale)}
-            </a>
-            <a href="#timeline" className={styles.navLink}>
-              {t("nav.experience", locale)}
-            </a>
-            <LanguageToggle locale={locale} />
-            <a href="#contact" className="btn-primary">
-              {t("nav.contact", locale)}
-            </a>
-          </nav>
+          <SiteNavigation locale={locale} />
         </div>
       </header>
 
+      <main id="main-content">
       {/* Hero */}
-      <section className={styles.hero} aria-label="Introduction">
+      <section className={styles.hero} aria-label={locale === "ko" ? "소개" : "Introduction"}>
         <div className="container">
           <div className={styles.heroContent}>
             <p className={styles.heroKicker}>{t("hero.kicker", locale)}</p>
@@ -119,10 +106,10 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
               — {PERSON.experience[locale]}. {t("hero.desc", locale)}
             </p>
             <div className={styles.heroActions}>
-              <a href="#projects" className="btn-primary">
+              <a href="#practice" className="btn-primary">
                 {t("hero.cta.projects", locale)}
               </a>
-              <a href="#timeline" className={styles.btnSecondary}>
+              <a href="#contact" className={styles.btnSecondary}>
                 {t("hero.cta.career", locale)}
               </a>
             </div>
@@ -133,9 +120,10 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
       {/* Metrics */}
       <section className={styles.metricsSection} aria-label={t("metrics.label", locale)}>
         <div className="container">
+          <h2 className={styles.srOnly}>{t("metrics.title", locale)}</h2>
           <div className={styles.metricsGrid}>
             {KEY_METRICS.map((metric, idx) => (
-              <div key={idx} className={styles.metricCard}>
+              <article key={idx} className={styles.metricCard}>
                 <span className={styles.metricValue}>{metric.value}</span>
                 <span className={styles.metricLabel}>
                   {metric.label[locale]}
@@ -143,7 +131,7 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
                 <span className={styles.metricContext}>
                   {metric.context[locale]}
                 </span>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -166,17 +154,38 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
             <p className={styles.sectionDesc}>
               {t("practice.desc", locale)}
             </p>
+            <p className={styles.evidenceNote}>
+              <span aria-hidden="true">🔒</span> {t("practice.evidenceNote", locale)}
+            </p>
+          </div>
+          <div className={styles.practiceProcess}>
+            <p className={styles.processTitle}>{t("practice.processTitle", locale)}</p>
+            <ol className={styles.processSteps}>
+              {[1, 2, 3, 4].map((step) => (
+                <li key={step} className={styles.processStep}>
+                  <span className={styles.processNumber} aria-hidden="true">
+                    {String(step).padStart(2, "0")}
+                  </span>
+                  <span>{t(`practice.step${step}`, locale)}</span>
+                </li>
+              ))}
+            </ol>
           </div>
           <div className={styles.signatureGrid}>
             {MANUFACTURING_DATA_PRACTICE.map((work, idx) => (
               <SignatureWorkCard key={idx} item={work} locale={locale} />
             ))}
           </div>
+          <div className={styles.sectionActions}>
+            <a href="#contact" className="btn-primary">
+              {t("practice.cta", locale)}
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Philosophy */}
-      <section id="about" className={styles.section} aria-label="Philosophy">
+      <section id="about" className={styles.section} aria-label={t("nav.philosophy", locale)}>
         <div className="container">
           <div className={styles.philosophyGrid}>
             <div>
@@ -257,11 +266,16 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
               {t("explorations.desc", locale)}
             </p>
           </div>
-          <div className={styles.explorationsGrid}>
-            {EXPLORATIONS.map((item, idx) => (
-              <ExplorationCard key={idx} item={item} locale={locale} />
-            ))}
-          </div>
+          <details className={styles.contentDisclosure}>
+            <summary className={styles.disclosureSummary}>
+              {t("explorations.more", locale)}
+            </summary>
+            <div className={`${styles.explorationsGrid} ${styles.disclosureGrid}`}>
+              {EXPLORATIONS.map((item) => (
+                <ExplorationCard key={item.title.en} item={item} locale={locale} />
+              ))}
+            </div>
+          </details>
         </div>
       </section>
 
@@ -279,47 +293,21 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
             <h2 className={styles.sectionTitle}>
               {t("projects.title", locale)}
             </h2>
+            <p className={styles.sectionDesc}>{t("projects.desc", locale)}</p>
           </div>
           <div className={styles.projectsGrid}>
-            {PROJECTS.map((project, idx) => (
-              <a
-                key={idx}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-panel"
-              >
-                <div className={styles.projectHeader}>
-                  <span className={styles.projectEmoji}>{project.emoji}</span>
-                  <span
-                    className={`${styles.statusBadge} ${styles[`status-${project.status}`]}`}
-                  >
-                    {project.status === "live"
-                      ? "● Live"
-                      : project.status === "building"
-                        ? "⚒ Building"
-                        : "β Beta"}
-                  </span>
-                </div>
-                <h3 className={styles.projectTitle}>{project.title}</h3>
-                <p className={styles.projectDesc}>
-                  {project.description[locale]}
-                </p>
-                {project.impact && (
-                  <p className={styles.projectImpact}>
-                    🎯 {project.impact[locale]}
-                  </p>
-                )}
-                <div className={styles.projectTags}>
-                  {project.tags.map((tag, tagIdx) => (
-                    <span key={tagIdx} className={styles.projectTag}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </a>
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} locale={locale} />
             ))}
           </div>
+          <details className={styles.contentDisclosure}>
+            <summary className={styles.disclosureSummary}>{t("projects.more", locale)}</summary>
+            <div className={`${styles.projectsGrid} ${styles.disclosureGrid}`}>
+              {additionalProjects.map((project) => (
+                <ProjectCard key={project.title} project={project} locale={locale} />
+              ))}
+            </div>
+          </details>
         </div>
       </section>
 
@@ -339,47 +327,28 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
             </h2>
           </div>
           <div className={styles.timeline} role="list">
-            {TIMELINE.map((item, idx) => (
-              <div key={idx} className={styles.timelineItem} role="listitem">
-                <div className={styles.timelineSidebar}>
-                  <div className={styles.timelineDot} />
-                  <time className={styles.timelinePeriod}>{item.period}</time>
-                </div>
-                <div className={styles.timelineContent}>
-                  <h3 className={styles.timelineRole}>
-                    {item.role[locale]}
-                  </h3>
-                  <p className={styles.timelineCo}>
-                    {item.company[locale]}{" "}
-                    <span className={styles.companyType}>
-                      · {item.companyType}
-                    </span>
-                  </p>
-                  <p className={styles.timelineDesc}>
-                    {item.description[locale]}
-                  </p>
-                  {item.achievements[locale].length > 0 && (
-                    <ul className={styles.achievementList}>
-                      {item.achievements[locale].map((achievement, achIdx) => (
-                        <li key={achIdx} className={styles.achievementItem}>
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
+            {TIMELINE.slice(0, 4).map((item) => (
+              <TimelineEntry key={`${item.period}-${item.role.en}`} item={item} locale={locale} />
             ))}
           </div>
+          <details className={styles.contentDisclosure}>
+            <summary className={styles.disclosureSummary}>{t("timeline.more", locale)}</summary>
+            <div className={`${styles.timeline} ${styles.timelineContinuation}`} role="list">
+              {TIMELINE.slice(4).map((item) => (
+                <TimelineEntry key={`${item.period}-${item.role.en}`} item={item} locale={locale} />
+              ))}
+            </div>
+          </details>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className={styles.sectionDark} aria-label="Contact">
+      <section id="contact" className={styles.sectionDark} aria-label={t("nav.contact", locale)}>
         <div className="container">
           <CoffeeChatForm locale={locale} />
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className={styles.footer} role="contentinfo">
@@ -398,7 +367,7 @@ export default function PortfolioContent({ locale }: { locale: Locale }) {
         </div>
       </footer>
 
-      <AICopilot />
+      <AICopilot locale={locale} />
     </div>
   );
 }

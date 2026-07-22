@@ -284,8 +284,8 @@ export const MANUFACTURING_DATA_PRACTICE: SignatureWork[] = [
       en: "A Power BI dashboard that surfaces OEE values and loss trends by brand (SKU) and shift in real time. What used to be simple global rollups for top management only was redesigned so every layer — from plant managers to frontline operators — uses it for daily decision-making.",
     },
     outcome: {
-      ko: "글로벌 베스트 프랙티스로 채택 — 전 세계 지사의 극찬을 받았습니다.",
-      en: "Adopted as a global best practice — praised by subsidiaries worldwide.",
+      ko: "글로벌 베스트 프랙티스로 채택되어 타 지사에 공유되었습니다.",
+      en: "Adopted as a global best practice and shared with other affiliates.",
     },
     tags: {
       ko: ["Power BI", "OEE", "손실분석", "글로벌 확산"],
@@ -303,8 +303,8 @@ export const MANUFACTURING_DATA_PRACTICE: SignatureWork[] = [
       en: "A coaching dashboard that consolidates OPEN+ activity history and capability levels onto a single page. Curated with only the essentials, so frontline leaders can scan the data and instantly spot coaching points.",
     },
     outcome: {
-      ko: "타 국가 시연 시 “우리가 필요했던 것”이라는 반응.",
-      en: "When demoed in other countries: “this is exactly what we needed.”",
+      ko: "타 국가 시연을 통해 현장 리더용 통합 화면의 필요성을 검증했습니다.",
+      en: "Cross-country demos validated the need for a unified view for frontline leaders.",
     },
     tags: {
       ko: ["Power BI", "역량관리", "현장코칭", "OPEN+"],

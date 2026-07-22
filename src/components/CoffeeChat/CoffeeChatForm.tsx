@@ -1,7 +1,6 @@
-"use client";
-
 import styles from "./CoffeeChatForm.module.css";
-import { Locale, t } from "@/domains/profile/i18n";
+import { t } from "@/domains/profile/i18n";
+import type { Locale } from "@/domains/profile/i18n";
 
 const GOOGLE_BOOKING_URL = "https://calendar.app.google/jTfs3YcjsyszcvPY6";
 

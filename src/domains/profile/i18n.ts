@@ -6,13 +6,16 @@ export type Locale = "ko" | "en";
 
 export const UI: Record<string, Record<Locale, string>> = {
   // Navigation
-  "nav.philosophy": { ko: "Philosophy", en: "Philosophy" },
-  "nav.expertise": { ko: "Expertise", en: "Expertise" },
-  "nav.explorations": { ko: "Exploration", en: "Exploration" },
-  "nav.projects": { ko: "Projects", en: "Projects" },
-  "nav.experience": { ko: "Experience", en: "Experience" },
-  "nav.practice": { ko: "Practice", en: "Practice" },
-  "nav.contact": { ko: "Contact", en: "Contact" },
+  "nav.philosophy": { ko: "철학", en: "Philosophy" },
+  "nav.expertise": { ko: "전문 분야", en: "Expertise" },
+  "nav.explorations": { ko: "탐구", en: "Exploration" },
+  "nav.projects": { ko: "프로젝트", en: "Projects" },
+  "nav.experience": { ko: "경력", en: "Experience" },
+  "nav.practice": { ko: "대표 사례", en: "Case Studies" },
+  "nav.contact": { ko: "협업 문의", en: "Work Together" },
+  "nav.menu.open": { ko: "메뉴 열기", en: "Open menu" },
+  "nav.menu.close": { ko: "메뉴 닫기", en: "Close menu" },
+  "nav.skip": { ko: "본문으로 바로가기", en: "Skip to content" },
 
   // Hero
   "hero.kicker": { ko: "Domain First · AI Always", en: "Domain First · AI Always" },
@@ -28,8 +31,8 @@ export const UI: Record<string, Record<Locale, string>> = {
     ko: "스마트팩토리는 먼 곳에 없다 — 기존 데이터의 연결에서 시작한다.",
     en: "The smart factory isn't far off — it begins by connecting the data you already have.",
   },
-  "hero.cta.projects": { ko: "View Projects", en: "View Projects" },
-  "hero.cta.career": { ko: "Read Career", en: "Read Career" },
+  "hero.cta.projects": { ko: "대표 사례 보기", en: "View Case Studies" },
+  "hero.cta.career": { ko: "30분 커피챗", en: "Book a Coffee Chat" },
 
   // Metadata — single source for SEO/social <title> + description
   "meta.title": {
@@ -43,6 +46,7 @@ export const UI: Record<string, Record<Locale, string>> = {
 
   // Metrics
   "metrics.label": { ko: "Key Achievement Metrics", en: "Key Achievement Metrics" },
+  "metrics.title": { ko: "현장에서 검증한 개선 성과", en: "Measured Improvements on the Floor" },
 
   // Philosophy
   "philosophy.kicker": { ko: "Philosophy", en: "Philosophy" },
@@ -80,6 +84,19 @@ export const UI: Record<string, Record<Locale, string>> = {
     ko: "Power BI로 구축한 현장 데이터 시각화 — 브랜드(SKU)·근무조별 OEE와 손실을 한눈에. top management용 집계가 아닌, 현장이 내일 당장 쓸 수 있는 시각화입니다. OEE 층별분석 대시보드는 글로벌 베스트 프랙티스로 채택되었습니다.",
     en: "Frontline data visualization built in Power BI — OEE and losses by brand (SKU) and shift, at a glance. Not top-management rollups, but visualizations the floor can act on tomorrow. The OEE stratified-analysis dashboard was adopted as a global best practice.",
   },
+  "practice.evidenceNote": {
+    ko: "보안상 실제 공장 데이터와 화면은 공개하지 않습니다. 아래 사례는 문제, 설계 의도, 현장 적용 결과를 익명화해 설명합니다.",
+    en: "Production data and screens remain confidential. The cases below anonymize the problem, design decisions, and operational outcome.",
+  },
+  "practice.processTitle": {
+    ko: "현장 데이터를 행동으로 바꾸는 방식",
+    en: "How Floor Data Becomes Action",
+  },
+  "practice.step1": { ko: "현장 문제 정의", en: "Define the floor problem" },
+  "practice.step2": { ko: "기존 데이터 연결", en: "Connect existing data" },
+  "practice.step3": { ko: "손실 구조 시각화", en: "Visualize the loss structure" },
+  "practice.step4": { ko: "일일 개선 행동", en: "Drive daily action" },
+  "practice.cta": { ko: "이 접근 방식으로 상담하기", en: "Discuss This Approach" },
 
   // Explorations
   "explorations.kicker": { ko: "Exploration 2026", en: "Exploration 2026" },
@@ -92,6 +109,10 @@ export const UI: Record<string, Record<Locale, string>> = {
     en: "Translating manufacturing domain knowledge into software — every lesson learned is tested and validated through real projects. Each project is a record of failures and successes, a benchmark for the next step forward.",
   },
   "explorations.insight": { ko: "💡 배운 점", en: "💡 Learned" },
+  "explorations.more": { ko: "탐구 프로젝트 3개 펼쳐보기", en: "View 3 exploration projects" },
+  "explorations.status.active": { ko: "진행 중", en: "Active" },
+  "explorations.status.completed": { ko: "완료", en: "Completed" },
+  "explorations.status.prototype": { ko: "프로토타입", en: "Prototype" },
 
   // Projects
   "projects.kicker": { ko: "Open Projects", en: "Open Projects" },
@@ -99,6 +120,14 @@ export const UI: Record<string, Record<Locale, string>> = {
     ko: "오픈 서비스 및 포트폴리오",
     en: "Live Services & Open Projects",
   },
+  "projects.desc": {
+    ko: "직접 설계하고 운영하는 서비스 가운데 대표 프로젝트를 선별했습니다.",
+    en: "A selection of services I designed, built, and operate.",
+  },
+  "projects.more": { ko: "프로젝트 3개 더 보기", en: "View 3 more projects" },
+  "projects.status.live": { ko: "운영 중", en: "Live" },
+  "projects.status.building": { ko: "개발 중", en: "Building" },
+  "projects.status.beta": { ko: "베타", en: "Beta" },
 
   // Timeline
   "timeline.kicker": { ko: "Professional History", en: "Professional History" },
@@ -106,6 +135,7 @@ export const UI: Record<string, Record<Locale, string>> = {
     ko: "커리어 벤치마크 및 이력",
     en: "Career Benchmarks & Experience",
   },
+  "timeline.more": { ko: "이전 경력 3개 더 보기", en: "View 3 earlier roles" },
 
   // Contact (Coffee Chat)
   "contact.kicker": { ko: "Coffee Chat", en: "Coffee Chat" },

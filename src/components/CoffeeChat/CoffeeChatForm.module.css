@@ -24,9 +24,7 @@
 }
 
 .card {
-  background: rgba(22, 25, 31, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #14171c;
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 16px;
   padding: 2.5rem;

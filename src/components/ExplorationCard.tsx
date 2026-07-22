@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "@/app/page.module.css";
 import type { Exploration } from "@/domains/profile/data";
 import type { Locale } from "@/domains/profile/i18n";
@@ -19,11 +17,7 @@ export default function ExplorationCard({
         <span
           className={`${styles.statusBadge} ${styles[`status-${item.status}`]}`}
         >
-          {item.status === "active"
-            ? "Active"
-            : item.status === "completed"
-              ? "Completed"
-              : "Prototype"}
+          {t(`explorations.status.${item.status}`, locale)}
         </span>
       </div>
       <h3 className={styles.explorationTitle}>{item.title[locale]}</h3>
